@@ -254,10 +254,10 @@
 			}
 		}
 		$('body').on('click', '.btnHapus', function() {
-			var id_foto = $(this).data('id_foto');
+			var IDService = $(this).data('idservice');
 			Swal.fire({
 				title: 'Are you sure?',
-				text: "Hapus Data Survey Foto Ini",
+				text: "Hapus Data Ini",
 				icon: 'warning',
 				showCancelButton: true,
 				confirmButtonColor: '#3085d6',
@@ -270,7 +270,7 @@
 						type: "post",
 						url: '<?= base_url('admin/hapusDataSurveyFoto'); ?>',
 						data: {
-							id_foto,
+							IDService,
 						},
 						dataType: "json",
 						success: function(e) {

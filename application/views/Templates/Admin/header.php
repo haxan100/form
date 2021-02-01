@@ -17,6 +17,8 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 	<link href="<?= base_url() ?>templates/MatAdmin/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
 	<!-- CSS Just for demo purpose, don't include it in your project -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 	<link href="<?= base_url() ?>templates/MatAdmin/demo/demo.css" rel="stylesheet" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 </head>

@@ -7,8 +7,6 @@
 	<script src="<?= base_url() ?>templates/MatAdmin/js/plugins/perfect-scrollbar.jquery.min.js"></script>
 	<!-- Plugin for the momentJs  -->
 	<script src="<?= base_url() ?>templates/MatAdmin/js/plugins/moment.min.js"></script>
-	<!--  Plugin for Sweet Alert -->
-	<script src="<?= base_url() ?>templates/MatAdmin/js/plugins/sweetalert2.js"></script>
 	<!-- Forms Validations Plugin -->
 	<script src="<?= base_url() ?>templates/MatAdmin/js/plugins/jquery.validate.min.js"></script>
 	<!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
