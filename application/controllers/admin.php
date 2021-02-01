@@ -11,6 +11,7 @@ class admin extends CI_Controller {
 		$this->load->library(array('form_validation'));
 		//memanggil recapca
 		$this->load->model('SulamModel');
+		$this->load->model('SemuaModel');
 	}
 
 	public function index()
@@ -67,5 +68,66 @@ class admin extends CI_Controller {
 		}
 		echo json_encode($datatable);
 		exit();
+	}
+	public function tambah_harga_sulam()
+	{
+		$nama_service = $this->input->post('nama_service');
+		$harga = $this->input->post('harga');
+		$status = true;
+		$errorInputs = array();
+		if (empty($nama_service)) {
+			$status = false;
+			$errorInputs[] = array('#nama', 'Silahkan Isi Nama Service');
+		}
+		if (empty($harga)) {
+			$status = false;
+			$errorInputs[] = array('#harga', 'Silahkan Isi Harga');
+		}
+		if($status){
+			$in = array(
+				'ServiceName' => $nama_service,
+				'Price' => $harga,
+			);
+			$this->SemuaModel->Tambah(' tbl_service_sulam', $in);
+			$status=true;
+			$message="Berhasil Menambah Data";
+		}
+
+		echo json_encode(array(
+			'status' => $status,
+			'message' => $message,
+			'errorInputs' => $errorInputs
+		));
+		# code...
+	}
+	public function editFotoSur()
+	{
+		// var_dump($_POST,$_FILES);die;
+		$idservice = $this->input->post('idservice');
+		$nama_service = $this->input->post('nama_service');
+		$harga = $this->input->post('harga');
+		$status=true;
+		$message = "Berhasil Mengubah";
+		if(empty($harga)){
+			$status = false;
+			$message = "Harga harus Di Isi";
+		}
+		if (empty($nama_service)) {
+			$status = false;
+			$message = "Nama harus Di Isi";
+		}else{
+			$in = array(
+				'ServiceName' => $nama_service,
+				'Price' => $harga,
+			);	
+			$this->SemuaModel->Ubah(' tbl_service_sulam', 'IDService', $in, $idservice);
+			$status = true;
+			$message = "Berhasil Mengubah Data";
+		}
+		
+		echo json_encode(array(
+			'status' => $status,
+			'message' => $message,
+		));
 	}
 }

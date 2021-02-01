@@ -2,10 +2,10 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
+				<button type="button" id="btnTambah" class="btn btn-primary">Tambah</button>
 				<div class="card">
 					<div class="card-header card-header-primary">
-						<h4 class="card-title ">Simple Table</h4>
-						<p class="card-category"> Here is a subtitle for this table</p>
+						<h4 class="card-title ">Master Harga Sulam</h4>
 					</div>
 					<div class="card-body">
 						<div class="table-responsive">
@@ -27,13 +27,105 @@
 	</div>
 </div>
 
+<div class="modal fade" id="modalProduk" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="lblTambah">Tambah</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form id="form">
+					<input type="hidden" name="idservice" id="idservice">
+					<div class="form-group">
+						<label for="NamaService">Nama Service</label>
+						<input type="text" class="form-control" id="nama_service" name="nama_service" aria-describedby="emailHelp" placeholder="Masukan Nama Service">
+					</div>
+					<div class="form-group">
+						<label for="Harga">Harga</label>
+						<input type="number" class="form-control" id="harga" name="harga" placeholder="Harga">
+					</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" id="btnTambahPRO" class="btn btn-primary">Save changes</button>
+				<button id="btnUbah" class="btn btn-info"><i class="fa fa-pencil-square-o"></i> Ubah</button>
+
+			</div>
+		</div>
+	</div>
+	</form>
+</div>
+
 <script src="<?= base_url() ?>templates/MatAdmin/js/plugins/jquery.dataTables.min.js"></script>
 <script>
 	$(document).ready(function() {
-		console.log("s")
 		var bu = '<?= base_url() ?>';
+		var url_form = bu + 'Admin/tambah_harga_sulam';
+		var url_form_ubah = bu + 'admin/edit_user'
 		// $('#modalProduk').modal('show');
 		var url_form_ubah = bu + 'admin/editFotoSur';
+
+		$('#btnTambah').on('click', function() {
+			url_form = url_form;
+			$('.modalProdukTitleTambah').show();
+			$('.modalProdukTitleDetail').hide();
+			$('.modalProdukTitleUbah').hide();
+			$('#modalProduk').modal('show')
+			$('#btnTambah').show();
+			$('#btnUbah').hide();
+			$('#btnCopy').hide();
+			$('#btnTampil').hide();
+			$('.modalFotoUbah').hide();
+			$('#foto_wrapper').html('');
+
+			$('#btnTambah').show();
+			$('#btnUbah').hide();
+			$('#labelEdit').hide();
+			$('#labelTambah').show();
+			// $('input').val('');
+		});
+
+		function CekNama() {
+			var nama_service = $('#nama_service').val();
+			if (nama_service == '') {
+				validasi('#nama_service', false, 'Silahkan isi Nama Service');
+				return false;
+			} else {
+				validasi('#nama_service', true);
+				return true;
+			}
+		}
+
+		function CekHarga() {
+			var harga = $('#harga').val();
+			if (harga == '') {
+				validasi('#harga', false, 'Silahkan isi Harga');
+				return false;
+			} else {
+				validasi('#harga', true);
+				return true;
+			}
+		}
+
+		$('#btnTambahPRO').on('click', function() {
+			console.log('_nama, _harga')
+
+			var _nama = CekNama();
+			var _harga = CekHarga();
+			console.log(_nama, _harga)
+			if (
+				_nama && _harga
+			) {
+				$("#form").submit();
+			}
+			return false;
+			$('#modalProduk').modal('hide');
+			datatable.ajax.reload();
+
+		});
 
 		function resetForm() {
 			// console.log('reset');
@@ -107,7 +199,15 @@
 			}).done(function(e) {
 				// console.log(e)
 				if (!e.error) {
-					notifikasi('#alertNotif', e.message, false);
+
+					Swal.fire(
+						'Berhasil..',
+						e.message,
+						'success'
+					)
+
+
+					// notifikasi('#alertNotif', e.message, false);
 					$('#modalProduk').modal('hide');
 					datatable.ajax.reload();
 					resetForm();
@@ -210,12 +310,13 @@
 			$('#btnUbah').show();
 			$('#labelEdit').show();
 			$('#labelTambah').hide();
-			var id_foto = $(this).data('id_foto');
-			var id_survey = $(this).data('id_survey');
-			var nama_user = $(this).data('nama_user');
-			$('#nama_user').val(nama_user);
-			$('#id_foto').val(id_foto);
-			$('#id_survey').val(id_survey);
+
+			var idservice = $(this).data('idservice');
+			var servicename = $(this).data('servicename');
+			var price = $(this).data('price');
+			$('#idservice').val(idservice);
+			$('#nama_service').val(servicename);
+			$('#harga').val(price);
 		});
 		$('#btnUbah').click(function(e) {
 			url_form = url_form_ubah;
