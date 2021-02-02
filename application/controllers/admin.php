@@ -152,4 +152,61 @@ class admin extends CI_Controller {
 			'message' => $message,
 		));
 	}
+	public function master_surveyA()
+	{
+		$this->load->view('Templates/Admin/header');
+		$this->load->view('Templates/Admin/sidebar');
+		$this->load->view('Admin/master_surveya');
+		$this->load->view('Templates/Admin/footer');
+	}
+	public function getAllDataSurveySulam()
+	{
+		$bu = base_url();
+		$dt = $this->SulamModel->dt_sulam_alis($_POST);
+		$datatable['draw']            = isset($_POST['draw']) ? $_POST['draw'] : 1;
+		$datatable['recordsTotal']    = $dt['totalData'];
+		$datatable['recordsFiltered'] = $dt['totalData'];
+		$datatable['data']            = array();
+		$start  = isset($_POST['start']) ? $_POST['start'] : 0;
+		$no = $start + 1;
+		foreach ($dt['data']->result() as $row) {
+// var_dump($row);die;
+			$fields = array($no++);
+			$fields[] = $row->name;
+			$fields[] = $row->ServiceName;
+			$fields[] = $row->Nomor_Service;
+			$fields[] = $row->addres;
+			$fields[] = $row->no_phone;
+			$fields[] = $row->email;
+			$fields[] = $row->client_botox;
+			$fields[] = $row->diabetes;
+			$fields[] = $row->hepatitis;
+			$fields[] = $row->easy_bleeds;
+			$fields[] = $row->sensitif_skin;
+			$fields[] = $row->oily_skin;
+			$fields[] = $row->do_chemical_peels;
+			$fields[] = $row->pregnant;
+
+			$fields[] = $row->name_our_art;
+			$fields[] = $row->store;
+			$fields[] = $row->foto_art_rainbow;
+
+			$fields[] = '
+   
+
+        <button class="btn btn-danger my-1 btn-blocks  btnHapus text-white" 
+          data-id_survey_sulam="' . $row->id_survey_sulam . '"
+          data-	name="' . $row->	name . '"
+          data-	Nomor_Service="' . $row->	Nomor_Service . '"
+
+        ><i class="fas fa-trash"></i> Hapus</button>
+        ';
+
+
+
+			$datatable['data'][] = $fields;
+		}
+		echo json_encode($datatable);
+		exit();
+	}
 }

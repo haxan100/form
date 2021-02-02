@@ -153,6 +153,8 @@ class user extends CI_Controller {
 				'oily_skin' => $client_kulit_berminyak,
 				'do_chemical_peels' => $client_chemical_peeling,
 				'pregnant' => $client_hamil,
+				'no_phone' => $client_no_hp,
+				
 
 				'drinking_alcohol_in_the_last_24_hours' => $client_alkohol,
 				'metal_alergic' => $client_alergi_metal,
