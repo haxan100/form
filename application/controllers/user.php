@@ -36,6 +36,15 @@ class user extends CI_Controller {
 	}
 	public function simpan()
 	{
+
+		$seed = str_split('abcdefghijklmnopqrstuvwxyz'
+		. 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+		. '0123456789'); // and any other characters
+		shuffle($seed); // probably optional since array_is randomized; this may be redundant
+		$rand = '';
+		foreach (array_rand($seed, 5) as $k) $rand .= $seed[$k];
+
+		// var_dump($rand);die;
 		$nama =$this->input->post('nama');
 		$tanggal_lahir =$this->input->post('tanggal_lahir');
 		$state2 =$this->input->post('state2');
@@ -162,11 +171,17 @@ class user extends CI_Controller {
 				'name_our_art' => $after_care_nama_art,
 
 				'store' => $after_care_nama_store,
+				'Nomor_Service' => '2021-'.$rand,
 				'foto_art_rainbow' => 	$configUpload['file_name'] ,
-				
-				
+								
+			);
+			$ses =array(
+				'name' => $nama,
+				'Nomor_Service' => '2021-' . $rand,
 			);
 			$this->SemuaModel->Tambah('tbl_data_survey_sulam_alis',$tambah);
+			// var_dump($ses);die;
+			$this->session->set_userdata($ses);
 			// $this->SemuaModel->Tambah->('tbl_data_survey_sulam_alis', $tambah);
 
 			$message = 'Berhasil Menambah Data Anda';
@@ -179,5 +194,10 @@ class user extends CI_Controller {
 		));
 
 
+	}
+	public function indexb()
+	{
+
+		$this->load->view('User/hasilForm1');
 	}
 }

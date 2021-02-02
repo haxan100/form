@@ -163,7 +163,9 @@
 			},
 
 			"columnDefs": [{
-					"targets": 0,
+					"targets":[
+						1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+					],
 					"className": "dt-body-center dt-head-center",
 					"width": "20px",
 					"orderable": false,
@@ -175,7 +177,7 @@
 				{
 					"targets": 2,
 					"className": "dt-body-center dt-head-center"
-				},
+				}, 
 			],
 			"order": [
 				[1, "asc"]

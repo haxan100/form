@@ -618,7 +618,8 @@
 
 
 			$('#tombolDaftar').click(function(e) {
-
+				// console.log($('#state2').val())
+				// return false
 				var a1 = $('#membacasetuju').is(":checked");
 				var a2 = $('#state1').is(":checked");
 				var a3 = $('#state3').is(":checked");
@@ -649,12 +650,18 @@
 				if (
 					!a1 || !a2 || !a3 || !a4 || !a5 || !a6 || !a7 || !a8 || !a12 || !a11 || !a9 || !a13 || !a14 || !a15 || !a16 || !a17 || !a18 ||
 					!i1 || !i2 || !i3 ||
-					!i4 || !i5 || !i6 ||
+					!i4 || !i6 ||
 					!i7 || !i8 || !i9
 				) {
 					Swal.fire({
 						icon: 'error',
 						title: 'Mohon Isi Semua Data...',
+						text: 'Anda Di Mohon Isi Semua Data',
+					})
+				} else if ($('#state2').val() == null) {
+					Swal.fire({
+						icon: 'error',
+						title: 'Mohon Pilih Tipe Sulam Dan Harga...',
 						text: 'Anda Di Mohon Isi Semua Data',
 					})
 				} else {
@@ -672,7 +679,7 @@
 				}).done(function(e) {
 					// console.log(e);
 					if (e.status) {
-						html = '<option value="" selected disabled>Silahkan Pilih </option>';
+						html = '<option value="0" selected disabled>Silahkan Pilih </option>';
 						$.each(e.data, function(key, val) {
 							html += '<option value="' + val.value + '">' + val.html + '</option>';
 						});
@@ -709,6 +716,10 @@
 							title: 'berhasil',
 							text: e.message,
 						})
+						setInterval(() => {
+							window.location.href = bu + 'user/indexb';
+
+						}, 200);
 					} else {
 
 						Swal.fire({

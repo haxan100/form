@@ -189,7 +189,8 @@ class admin extends CI_Controller {
 
 			$fields[] = $row->name_our_art;
 			$fields[] = $row->store;
-			$fields[] = $row->foto_art_rainbow;
+
+			$fields[] =  '<img class="img-fluid" id="foto_wrapper" id="foto_wrapper"   src="' . $bu . '/upload/images/profile/' . $row->foto_art_rainbow . ' "/> ';
 
 			$fields[] = '
    

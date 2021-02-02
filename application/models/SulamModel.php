@@ -84,12 +84,13 @@ class SulamModel extends CI_Model {
 		$from = 'tbl_data_survey_sulam_alis ta';
 		$columns = array(
 			'name',
-			'IDService',
+			'ta.IDService',
 		);
 		// untuk search
 		$columnsSearch = array(
 			'name',
-			'IDService',
+			'ta.IDService',
+			'ta.Nomor_Service',
 		);
 		$sql = "  SELECT * from $from
 		left join tbl_service_sulam ss on ss.IDService = ta.IDService
