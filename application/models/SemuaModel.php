@@ -41,6 +41,19 @@ public function getNamaByForTabelNotIdUser($nama_id, $nama_cari, $nama_tabel,$id
 		$this->db->where($nama_id, $id);
 		return $this->db->get($nama_table)->result();
 	}
+	public function getByID($namakolom,$namatabel,$namacari)
+	{
+		$this->db->where($namakolom, $namacari);
+		$sql = $this->db->get($namatabel)->result();
+		// var_dump($this->db->last_query());die;
+		return $sql;
+	}
+	public function getproduk()
+
+	{
+
+		return $this->db->get('tbl_service_sulam')->result();
+	}
 
                         
                             

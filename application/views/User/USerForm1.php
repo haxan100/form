@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>RegistrationForm_v10 by Colorlib</title>
+	<title>Form Sulam Alis</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- LINEARICONS -->
@@ -20,13 +20,15 @@
 
 
 	<div class="wrapper">
+
 		<div class="inner">
 			<img src="<?= base_url() ?>/templates/user/images/image-1.png" alt="" class="image-1">
-			<form action="">
+			<form id="formRegister">
 				<h3>Consent form Sulam Alis</h3>
 
 				<div class="TulisanIni">
 					<h5>USER FORM</h5>
+					<p id="alertNotif"></p>
 				</div>
 				<br>
 				<hr>
@@ -44,13 +46,14 @@
 
 				<div class="form-holder">
 					<b>Saya telah membaca, mengerti dan setuju *</b><br>
+					<p id="alertNotifa1"></p>
 				</div>
 				<div class="row">
 					<div class="col-6">
 					</div>
 					<div class="col-12">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+							<input class="form-check-input" type="checkbox" name="membacasetuju" id="membacasetuju">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Ceklist Disini
 							</label>
@@ -64,6 +67,7 @@
 				<br>
 
 				<div class="form-holder">
+					<p id="alertNotifa2"></p>
 					<b>Instruksi aftercare sudah dijelaskan dan telah di berikan salinan secara tertulis oleh pihak rainbrow,dan saya akan mematuhinya. Dan bila saya kurang jelas saya akan menghubungi kontak after careRainBrow *</b><br>
 				</div>
 				<div class="row">
@@ -71,7 +75,7 @@
 					</div>
 					<div class="col-12">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+							<input class="form-check-input" type="checkbox" name="state1" id="state1">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Ceklist Disini
 							</label>
@@ -84,14 +88,15 @@
 
 				<h5><label for="idSpek">Silahkan diisi Tipe Sulam dan Harga *</label> </h5>
 				<br>
-				<select id="idSpek" name="idSpek" class="form-control">
-					<option value="default">Silahkan Pilih Spesifikasi</option>
+				<select id="state2" name="state2" class="form-control">
+					<option value="default">Silahkan Pilih </option>
 				</select>
 				<br>
 				<br>
 
 
 				<div class="form-holder">
+					<p id="alertNotifa3"></p>
 					<b>Saya mengerti dan memilih dengan benar jenis sulaman yang di buat dan mengerti dan jelas mengenai harga yang di pilih. *</b><br>
 				</div>
 				<div class="row">
@@ -99,7 +104,7 @@
 					</div>
 					<div class="col-12">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+							<input class="form-check-input" type="checkbox" name="state3" id="state3">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Ceklist Disini
 							</label>
@@ -108,6 +113,7 @@
 				</div><br>
 
 				<div class="form-holder">
+					<p id="alertNotifa4"></p>
 					<b>Tidak ada garansi dalam setiap hasil yang didapat, termasuk didalamnya kamuflase, removal , dsb. *</b><br>
 				</div>
 				<div class="row">
@@ -115,7 +121,7 @@
 					</div>
 					<div class="col-12">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+							<input class="form-check-input" type="checkbox" name="state4" id="state4">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Ceklist Disini
 							</label>
@@ -124,14 +130,16 @@
 				</div><br>
 
 				<div class="form-holder">
+					<p id="alertNotifa5"></p>
 					<b>Saya mengerti bahwa Retin A, Renova, AHA, BHA, Glicolic Acid, tidak dianjurkan terkena area yang disulam, karena mempercepat hilangnya sulam.</b><br>
 				</div>
+
 				<div class="row">
 					<div class="col-6">
 					</div>
 					<div class="col-12">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+							<input class="form-check-input" type="checkbox" name="state5" id="state5">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Ceklist Disini
 							</label>
@@ -140,6 +148,7 @@
 				</div><br>
 
 				<div class="form-holder">
+					<p id="alertNotifa6"></p>
 					<b>Saya mengerti bahwa sinar matahari, berjemur, kaporit, dan beberapa obat kulit dapat merubahwarna sulam *</b><br>
 				</div>
 				<div class="row">
@@ -147,7 +156,7 @@
 					</div>
 					<div class="col-12">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+							<input class="form-check-input" type="checkbox" name="state6" id="state6">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Ceklist Disini
 							</label>
@@ -156,14 +165,16 @@
 				</div><br>
 
 				<div class="form-holder">
+					<p id="alertNotifa7"></p>
 					<b>Saya bertanggung jawab untuk pemilihan warna, pilihan bentuk, yang akan di kerjakan hari ini. *</b><br>
 				</div>
+
 				<div class="row">
 					<div class="col-6">
 					</div>
 					<div class="col-12">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+							<input class="form-check-input" type="checkbox" name="state7" id="state7">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Ceklist Disini
 							</label>
@@ -174,13 +185,15 @@
 
 				<div class="form-holder">
 					<b>Saya mengerti tentang proses pengelupasan, dan warna akan pudar seiringnya waktu karenaregenerasi kulit, dan saya harus menjaga warnanya dengan cara melakukan retouch setelah 1 bulan *</b><br>
+					<p id="alertNotifa8"></p>
 				</div>
+
 				<div class="row">
 					<div class="col-6">
 					</div>
 					<div class="col-12">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+							<input class="form-check-input" type="checkbox" name="state8" id="state8">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Ceklist Disini
 							</label>
@@ -190,13 +203,15 @@
 
 				<div class="form-holder">
 					<b>Saya mengerti bahwa harga sulam alis yang saya pilih *</b><br>
+					<p id="alertNotifa9"></p>
 				</div>
+
 				<div class="row">
 					<div class="col-6">
 					</div>
 					<div class="col-12">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+							<input class="form-check-input" type="checkbox" name="state9" id="state9">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Ceklist Disini
 							</label>
@@ -205,7 +220,7 @@
 					<br>
 					<div class="col-12">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+							<input class="form-check-input" type="checkbox" name="state10" id="state10">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Ceklist Disini
 							</label>
@@ -215,13 +230,15 @@
 
 				<div class="form-holder">
 					<b>Saya mengerti dengan tidak adanya sistem refund (kembali uang), dengan alasan apa pun. *</b><br>
+					<p id="alertNotifa11"></p>
 				</div>
+
 				<div class="row">
 					<div class="col-6">
 					</div>
 					<div class="col-12">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+							<input class="form-check-input" type="checkbox" name="state11" id="state11">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Ceklist Disini
 							</label>
@@ -230,6 +247,7 @@
 				</div><br>
 
 				<div class="form-holder">
+					<p id="alertNotifa12"></p>
 					<b>Saya mengerti Rainbrow menyediakan jasa seni kecantikan sulam, tidak ada tindak medis *</b><br>
 				</div>
 				<div class="row">
@@ -237,7 +255,7 @@
 					</div>
 					<div class="col-12">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+							<input class="form-check-input" type="checkbox" name="state12" id="state12">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Ceklist Disini
 							</label>
@@ -248,13 +266,15 @@
 
 				<div class="form-holder">
 					<b>Saya mengerti resiko dan komplikasi, dan saya akan sepenuhnya bertanggung jawab atas resikoyang mungkin terjadi. *</b><br>
+					<p id="alertNotifa13"></p>
 				</div>
+
 				<div class="row">
 					<div class="col-6">
 					</div>
 					<div class="col-12">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+							<input class="form-check-input" type="checkbox" name="state13" id="state13">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Ceklist Disini
 							</label>
@@ -265,13 +285,15 @@
 
 				<div class="form-holder">
 					<b>Saya mengerti, proses penyembuhan berbeda pada setiap orang, hilangnya pigment atau perubahanwarna adalah normal di minggu pertama. Saya harus bersikap tenang, tidak panik, dan melakukan retouchtidak lebih dari 3 bulan terhitung dari sesi sulam pertama. Untuk harga retouch adalah sama dengan hargabaru. Pada kasus tertentu pengerjaan membutuhkan lebih dari 2x retouch. *</b><br>
+					<p id="alertNotifa14></p>
 				</div>
-				<div class="row">
+
+				<div class=" row">
 					<div class="col-6">
 					</div>
 					<div class="col-12">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+							<input class="form-check-input" type="checkbox" name="state14" id="state14">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Ceklist Disini
 							</label>
@@ -281,13 +303,15 @@
 
 				<div class="form-holder">
 					<b>Saya telah membaca dan memahami isi dari concent form. Saya mengerti dan memahami resiko yang mungkin terjadi dari proses sulam, saya tidak akan meyalahi pihak Rainbrow atas resiko yang mungkin terjadi, dan saya telah mendapat kesempatan untuk bertanya dan pertanyaan saya telah dijawab dengan jelas dan saya memberikan otorisasi kepada (isi pada kolom di bawah) untuk melakukan proses sulam kepada saya. *</b><br>
+					<p id="alertNotifa15"></p>
 				</div>
+
 				<div class="row">
 					<div class="col-6">
 					</div>
 					<div class="col-12">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+							<input class="form-check-input" type="checkbox" name="state15" id="state15">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Ceklist Disini
 							</label>
@@ -302,47 +326,47 @@
 				<b>Tanggal Lahir Dan Usia</b><br>
 				<div class="form-holder">
 					<span class="lnr lnr-user"></span>
-					<input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
+					<input type="text" class="form-control" id="client_tgl_lahir_usia" name="clienttgl_lahir_usia" placeholder="tanggal lahir dan usia">
 				</div>
 				<br>
 
 				<b>Nama Lengkap</b><br>
 				<div class="form-holder">
 					<span class="lnr lnr-user"></span>
-					<input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
+					<input type="text" class="form-control" id="client_nama" name="client_nama" placeholder="Nama">
 				</div>
 				<br>
 
 				<b>Alamat</b><br>
 				<div class="form-holder">
 					<span class="lnr lnr-user"></span>
-					<input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
+					<input type="text" class="form-control" id="client_alamat" name="client_alamat" placeholder="Alamat">
 				</div>
 				<br>
 
 				<b>No Telp / WA</b><br>
 				<div class="form-holder">
 					<span class="lnr lnr-user"></span>
-					<input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
+					<input type="number" class="form-control" id="client_no_hp" name="client_no_hp" placeholder="No HP">
 				</div>
 				<br>
 
 				<b>Email</b><br>
 				<div class="form-holder">
 					<span class="lnr lnr-user"></span>
-					<input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
+					<input type="text" class="form-control" id="client_email" name="client_email" placeholder="Email">
 				</div>
 				<br>
 
 				<b>Ya / tidak Botox ( terakhir pada tanggal? ) *</b><br>
 				<div class="form-holder">
 					<span class="lnr lnr-user"></span>
-					<input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
+					<input type="text" class="form-control" id="client_botox" name="client_botox" placeholder="Jawaban">
 				</div>
 
 				<label for="idSpek">Diabetes*</label> <br>
 				<br>
-				<select id="idSpek" name="idSpek" class="form-control">
+				<select id="client_diabetes" name="client_diabetes" class="form-control">
 					<option value="YA">Ya</option>
 					<option value="TIDAK">Tidak</option>
 				</select>
@@ -350,7 +374,7 @@
 				<br>
 				<label for="idSpek">Hepatitis (A, B,C,D) *</label> <br>
 				<br>
-				<select id="idSpek" name="idSpek" class="form-control">
+				<select id="client_hepatitis" name="client_hepatitis" class="form-control">
 					<option value="YA">Ya</option>
 					<option value="TIDAK">Tidak</option>
 				</select>
@@ -360,7 +384,7 @@
 				<br>
 				<label for="idSpek">Mudah berdarah*</label> <br>
 				<br>
-				<select id="idSpek" name="idSpek" class="form-control">
+				<select id="client_mudah_berdarah" name="client_mudah_berdarah" class="form-control">
 					<option value="YA">Ya</option>
 					<option value="TIDAK">Tidak</option>
 				</select>
@@ -370,7 +394,7 @@
 				<br>
 				<label for="idSpek">kulit sensitif **</label> <br>
 				<br>
-				<select id="idSpek" name="idSpek" class="form-control">
+				<select id="client_kulit_sensitif" name="client_kulit_sensitif" class="form-control">
 					<option value="YA">Ya</option>
 					<option value="TIDAK">Tidak</option>
 				</select>
@@ -380,7 +404,7 @@
 				<br>
 				<label for="idSpek">kulit berminyak *</label> <br>
 				<br>
-				<select id="idSpek" name="idSpek" class="form-control">
+				<select id="client_kulit_berminyak" name="client_kulit_berminyak" class="form-control">
 					<option value="YA">Ya</option>
 					<option value="TIDAK">Tidak</option>
 				</select>
@@ -389,7 +413,7 @@
 				<br>
 				<label for="idSpek">melakukan chemical peeling *</label> <br>
 				<br>
-				<select id="idSpek" name="idSpek" class="form-control">
+				<select id="client_chemical_peeling" name="client_chemical_peeling" class="form-control">
 					<option value="YA">Ya</option>
 					<option value="TIDAK">Tidak</option>
 				</select>
@@ -398,7 +422,7 @@
 				<br>
 				<label for="idSpek">hamil</label> <br>
 				<br>
-				<select id="idSpek" name="idSpek" class="form-control">
+				<select id="client_hamil" name="client_hamil" class="form-control">
 					<option value="YA">Ya</option>
 					<option value="TIDAK">Tidak</option>
 				</select>
@@ -407,7 +431,7 @@
 				<br>
 				<label for="idSpek">meminum alkohol dalam 24 jam terakhir</label> <br>
 				<br>
-				<select id="idSpek" name="idSpek" class="form-control">
+				<select id="client_alkohol" name="client_alkohol" class="form-control">
 					<option value="YA">Ya</option>
 					<option value="TIDAK">Tidak</option>
 				</select>
@@ -416,7 +440,7 @@
 
 				<label for="idSpek">meminum aspirin/ibuprofen dalam 24 jam terakhir </label> <br>
 				<br>
-				<select id="idSpek" name="idSpek" class="form-control">
+				<select id="client_aspirin" name="client_aspirin" class="form-control">
 					<option value="YA">Ya</option>
 					<option value="TIDAK">Tidak</option>
 				</select>
@@ -424,13 +448,14 @@
 				<br>
 				<label for="idSpek">alergi metal</label> <br>
 				<br>
-				<select id="idSpek" name="idSpek" class="form-control">
+				<select id="client_alergi_metal" name="client_alergi_metal" class="form-control">
 					<option value="YA">Ya</option>
 					<option value="TIDAK">Tidak</option>
 				</select>
 				<br>
 				<br>
 				<div class="form-holder">
+					<p id="alertNotifa16"></p>
 					<b>Saya memberikan keterangan diatas dengan benar dan jujur, atas sepengetahuan saya. Treatment yang akan diberikan Rainbrow berdasarkan dari informasi yang saya berikan. Dan saya mengerti Rainbrow hanya menyediakan jasa seni kecantikan, tidak terlibat dalam treatment medik.</b><br>
 				</div>
 				<div class="row">
@@ -438,7 +463,7 @@
 					</div>
 					<div class="col-12">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+							<input class="form-check-input" type="checkbox" name="state16" id="state16">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Ceklist Disini
 							</label>
@@ -498,14 +523,17 @@
 
 				<br>
 				<div class="form-holder">
+					<p id="alertNotifa17"></p>
 					<b>Saya membaca, mengerti dan setuju malakukan instruksi diatas. *</b><br>
 				</div>
+
+
 				<div class="row">
 					<div class="col-6">
 					</div>
 					<div class="col-12">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+							<input class="form-check-input" type="checkbox" name="state17" id="state17">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Ceklist Disini
 							</label>
@@ -516,14 +544,16 @@
 
 				<br>
 				<div class="form-holder">
+					<p id="alertNotifa18"></p>
 					<b>Saya Memahami dan Setuju seisi formulir ini *</b><br>
 				</div>
+
 				<div class="row">
 					<div class="col-6">
 					</div>
 					<div class="col-12">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+							<input class="form-check-input" type="checkbox" name="state18" id="state18">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Ceklist Disini
 							</label>
@@ -547,13 +577,13 @@
 				<b>Nama Lengkap ART Kami</b><br>
 				<div class="form-holder">
 					<span class="lnr lnr-user"></span>
-					<input type="text" class="form-control" id="foto" name="foto" placeholder="Nama">
+					<input type="text" class="form-control" id="after_care_nama_art" name="after_care_nama_art" placeholder="Nama Art Kami">
 				</div>
 				<br>
-				<b>Store</b><br>
+				<b>Nama Store</b><br>
 				<div class="form-holder">
 					<span class="lnr lnr-user"></span>
-					<input type="text" class="form-control" id="foto" name="foto" placeholder="Nama">
+					<input type="text" class="form-control" id="after_care_nama_store" name="after_care_nama_store" placeholder="Nama Store">
 				</div>
 				<br>
 
@@ -578,12 +608,127 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script src="<?= base_url() ?>/templates/user/js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 	<script>
 		$(document).ready(function() {
-			console.log("ssss")
 
-			// $('#modalProduk').modal('show');
-			// $('#MyModal').modal('show');
+
+			var bu = '<?= base_url(); ?>';
+
+
+			$('#tombolDaftar').click(function(e) {
+
+				var a1 = $('#membacasetuju').is(":checked");
+				var a2 = $('#state1').is(":checked");
+				var a3 = $('#state3').is(":checked");
+				var a4 = $('#state4').is(":checked");
+				var a5 = $('#state5').is(":checked");
+				var a6 = $('#state6').is(":checked");
+				var a7 = $('#state7').is(":checked");
+				var a8 = $('#state8').is(":checked");
+				var a9 = $('#state9').is(":checked");
+				var a11 = $('#state11').is(":checked");
+				var a12 = $('#state12').is(":checked");
+				var a13 = $('#state13').is(":checked");
+				var a14 = $('#state14').is(":checked");
+				var a15 = $('#state15').is(":checked");
+				var a16 = $('#state16').is(":checked");
+				var a17 = $('#state17').is(":checked");
+				var a18 = $('#state18').is(":checked");
+
+				var i1 = $('#nama').val();
+				var i2 = $('#tanggal_lahir').val();
+				var i3 = $('#client_nama').val();
+				var i4 = $('#client_alamat').val();
+				var i6 = $('#client_no_hp').val();
+				var i7 = $('#client_email').val();
+				var i8 = $('#after_care_nama_art').val();
+				var i9 = $('#after_care_nama_store').val();
+
+				if (
+					!a1 || !a2 || !a3 || !a4 || !a5 || !a6 || !a7 || !a8 || !a12 || !a11 || !a9 || !a13 || !a14 || !a15 || !a16 || !a17 || !a18 ||
+					!i1 || !i2 || !i3 ||
+					!i4 || !i5 || !i6 ||
+					!i7 || !i8 || !i9
+				) {
+					Swal.fire({
+						icon: 'error',
+						title: 'Mohon Isi Semua Data...',
+						text: 'Anda Di Mohon Isi Semua Data',
+					})
+				} else {
+					$("#formRegister").trigger('submit');
+					return false;
+				}
+			});
+			getSpek()
+
+			function getSpek() {
+				$.ajax({
+					url: bu + 'user/get_tbl_service_sulam',
+					method: 'post',
+					dataType: 'json',
+				}).done(function(e) {
+					// console.log(e);
+					if (e.status) {
+						html = '<option value="" selected disabled>Silahkan Pilih </option>';
+						$.each(e.data, function(key, val) {
+							html += '<option value="' + val.value + '">' + val.html + '</option>';
+						});
+						$('#state2').html(html);
+					} else {
+						alert('Terjadi Kesalahan');
+					}
+				}).fail(function(e) {
+					// console.log(e);
+					alert('Terjadi Kesalahan');
+
+				});
+			}
+
+			$("#formRegister").submit(function(e) {
+				$('#registerBtn').html('<i class="fas fa-spinner fa-spin"></i> Tunggu.. Mendaftarkan..');
+				$('#registerBtn').prop('disabled', true);
+				$.ajax({
+					type: 'POST',
+					url: bu + 'user/simpan',
+					dataType: 'json',
+					data: new FormData(this),
+					processData: false,
+					contentType: false,
+					cache: false,
+					async: false,
+				}).done(function(e) {
+					// console.log('berhasil');
+					console.log(e);
+					if (e.status) {
+
+						Swal.fire({
+							icon: 'success',
+							title: 'berhasil',
+							text: e.message,
+						})
+					} else {
+
+						Swal.fire({
+							icon: 'error',
+							title: 'Mohon Isi Semua Data...',
+							text: e.message,
+						})
+					}
+				}).fail(function(e) {
+					// console.log('gagal');
+					// console.log(e);
+					var message = 'Terjadi Kesalahan.';
+					$('#alertNotif').html('<div class="alert alert-danger alert-dismissible show" role="alert"><span>' + message + '</span><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+				}).always(function() {
+					console.log('selesai');
+					// toAlert();
+					// resetButton();
+				});
+				return false;
+			});
 
 		});
 	</script>
@@ -603,15 +748,15 @@
 		border-radius: 5px;
 	}
 
-	@media (max-width: 767px){
+	@media (max-width: 767px) {
 		form {
-		   padding: 2px;
-		   box-shadow: none;
-		   -webkit-box-shadow: none;
-		   -moz-box-shadow: none;
-		   -ms-box-shadow: none;
-		   -o-box-shadow: none;
-	   }
+			padding: 2px;
+			box-shadow: none;
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			-ms-box-shadow: none;
+			-o-box-shadow: none;
+		}
 
 	}
 </style>
