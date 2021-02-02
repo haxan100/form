@@ -25,6 +25,9 @@
 			<img src="<?= base_url() ?>/templates/user/images/image-1.png" alt="" class="image-1">
 			<form id="formRegister">
 				<h3>Consent form Sulam Alis</h3>
+				<?php
+					// var_dump($_SESSION); 
+				?>
 
 				<div class="TulisanIni">
 					<h5>USER FORM</h5>

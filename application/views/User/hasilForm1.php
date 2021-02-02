@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?php
-var_dump($_SESSION);
+// var_dump($_SESSION);
 $nama = $_SESSION['name'];
 $nomorSer = $_SESSION['Nomor_Service'];
 ?>
