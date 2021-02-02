@@ -12,15 +12,15 @@
 			<div class="sidebar-wrapper">
 				<ul class="nav">
 					<li class="nav-item active  ">
-						<a class="nav-link" href="./dashboard.html">
+						<a class="nav-link" href="<?= base_url() ?>admin/master_surveyA">
 							<i class="material-icons">dashboard</i>
 							<p>Dashboard</p>
 						</a>
 					</li>
 					<li class="nav-item ">
-						<a class="nav-link" href="./user.html">
-							<i class="material-icons">person</i>
-							<p>User Profile</p>
+						<a class="nav-link" href="<?= base_url() ?>admin/master_harga_sulam">
+							<i class="material-icons">money</i>
+							<p>Master Service Sulam</p>
 						</a>
 					</li>
 					<li class="nav-item ">
