@@ -197,7 +197,10 @@ class user extends CI_Controller {
 	}
 	public function indexb()
 	{
-
+		if (!isset($_SESSION['name'])) {
+			return
+				redirect('User/menu', 'refresh');
+		}
 		$this->load->view('User/hasilForm1');
 	}
 	public function sulam()
@@ -215,4 +218,135 @@ class user extends CI_Controller {
 		$this->session->sess_destroy();
 		$this->load->view('User/menu');
 	}
+	public function simpanEyelash()
+	{
+		// var_dump($_POST,$_FILES);die;
+
+		$seed = str_split('abcdefghijklmnopqrstuvwxyz'
+		. 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+		. '0123456789'); // and any other characters
+		shuffle($seed); // probably optional since array_is randomized; this may be redundant
+		$rand = '';
+		foreach (array_rand($seed, 5) as $k) $rand .= $seed[$k];
+
+		// var_dump($rand);die;
+		$nama = $this->input->post('nama');
+		$tanggal_lahir = $this->input->post('tanggal_lahir');
+		$clienttgl_lahir_usia = $this->input->post('tanggal_lahir');
+		$client_no_hp = $this->input->post('client_no_hp');
+
+		$client_alergi_lem = $this->input->post('alergiLem');
+		$client_kemoterapi = $this->input->post('kemoterapi');
+		$client_teroid = $this->input->post('teroid');
+		$client_lastik = $this->input->post('lastik');
+		$client_softlens = $this->input->post('softlens');
+		$client_kulit_berminyak = $this->input->post('kulit_berminyak');
+
+		$after_care_nama_art = $this->input->post('after_care_nama_art');
+		$after_care_nama_store = $this->input->post('after_care_nama_store');
+
+		$cekNama =  $this->SemuaModel->getByID('name', 'tbl_data_survey_eyelash', $nama);
+		$cekNoHp =  $this->SemuaModel->getByID('no_phone', 'tbl_data_survey_eyelash', $client_no_hp);
+
+		$status = true;
+		if (empty($nama)) {
+			$status = false;
+			$message = 'Data Tidak Boleh Kosong';
+		}
+		if (empty($clienttgl_lahir_usia)) {
+			$status = false;
+			$message = 'Data Tidak Boleh Kosong';
+		}
+		if (empty($client_no_hp)) {
+			$status = false;
+			$message = 'Data Tidak Boleh Kosong';
+		}
+
+
+		if ($cekNama == true) {
+			$message = "Nama Sudah Ada Yang Mengisi";
+			$status = false;
+		}
+		if ($cekNoHp == true) {
+			$message = "No Hp Sudah Ada Yang Mengisi";
+			$status = false;
+		}
+		// var_dump($cekNama==true);die;
+		$foto_error = true;
+		$c = isset($_FILES['foto']);
+
+		if (!$c) {
+			$message = 'Gambar Harap Di pilih';
+			$status = false;
+			$foto_error = true;
+		} else {
+			$cekGambar = $_FILES['foto']['name'];
+			if ($cekGambar == '') {
+				$message = 'Gambar Harap Di pilih';
+				$status = false;
+				$foto_error = true;
+			} else {
+				$foto_error = false;
+			}
+		}
+
+		if (!$foto_error) {
+			$foto = $_FILES['foto']['name'];
+			$configUpload = array();
+			$configUpload['upload_path']
+			= './upload/images/eyelash/';
+			$configUpload['allowed_types'] = 'png|jpg|jpeg|gif|bmp';
+			$configUpload['file_name'] = "Eyelash-" . date("Ymd-Hi") . ".jpg";
+			$configUpload['overwrite'] = true;
+			$this->load->library('upload', $configUpload);
+			$this->upload->initialize($configUpload);
+			$upload_1 = $this->upload->do_upload('foto');
+		}
+		if ($status) {
+			$now = date('YmdHis');
+			$tambah = array(
+				'name' => $nama,
+				'date_of_birth' => $tanggal_lahir,
+				'no_phone' => $client_no_hp,
+				'alergi_lem' => $client_alergi_lem,
+				'pengobatan_teriod' => $client_teroid,
+				'ops_lastik' => $client_lastik,
+				'pakai_softlens' => $client_softlens,
+				'kulit_berminyak' => $client_kulit_berminyak,
+				'nama_art' => $after_care_nama_art,
+				'kemoterapi' => $client_kemoterapi,
+				'nama_store' => $after_care_nama_store,
+				'Nomor_Service' => '2021-' . $rand,
+				'foto_art' => 	$configUpload['file_name'],				
+
+			);
+			$ses = array(
+				'name' => $nama,
+				'Nomor_Service' => '2021-' . $rand,
+			);
+			$this->SemuaModel->Tambah('tbl_data_survey_eyelash', $tambah);
+			// var_dump($ses);die;
+			$this->session->set_userdata($ses);
+
+			$message = 'Berhasil Menambah Data Anda';
+			$status = true;
+		}
+
+		echo json_encode(array(
+			'status' => $status,
+			'message' => $message,
+		));
+	}
+	public function HasilEyelash()
+	{
+		// $array['index'] ?? null;
+		// var_dump(!isset($_SESSION['name']));die;
+		if(!isset($_SESSION['name'])){
+			return 
+			redirect('User/menu','refresh');
+			
+		}
+		$this->load->view('User/hasilFor21');
+	}
+
 }

@@ -62,7 +62,7 @@
 					</div>
 					<div class="col-12">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" name="membacasetuju" id="membacasetuju">
+							<input class="form-check-input" type="checkbox" name="state1" id="state1">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Ceklist Disini
 							</label>
@@ -79,7 +79,7 @@
 					</div>
 					<div class="col-12">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" name="membacasetuju" id="membacasetuju">
+							<input class="form-check-input" type="checkbox" name="state2" id="state2">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Ceklist Disini
 							</label>
@@ -96,7 +96,7 @@
 					</div>
 					<div class="col-12">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" name="membacasetuju" id="membacasetuju">
+							<input class="form-check-input" type="checkbox" name="state3" id="state3">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Ceklist Disini
 							</label>
@@ -112,7 +112,7 @@
 					</div>
 					<div class="col-12">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" name="membacasetuju" id="membacasetuju">
+							<input class="form-check-input" type="checkbox" name="state4" id="state4">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Ceklist Disini
 							</label>
@@ -125,8 +125,8 @@
 				<label for="idSpek">KONDISI: Alergi pada lem | SARAN: Sambung bulumata menggunakan lem, ada kemungkinan reaksi alergi *
 				</label> <br>
 				<br>
-				<select id="client_hepatitis" name="client_hepatitis" class="form-control">
-					<option value=0>Pilih</option>
+				<select id="alergiLem" name="alergiLem" class="form-control">
+
 					<option value="YA">Ya</option>
 					<option value="TIDAK">Tidak</option>
 				</select>
@@ -137,8 +137,8 @@
 				<label for="idSpek">KONDISI: Kemoterapi dlm 6 bulan terakhir | SARAN: Terapi kemo, mungkin menimbulkan reaksidari material sambung bulumata *
 				</label> <br>
 				<br>
-				<select id="client_hepatitis" name="client_hepatitis" class="form-control">
-					<option value=0>Pilih</option>
+				<select id="kemoterapi" name="kemoterapi" class="form-control">
+
 					<option value="YA">Ya</option>
 					<option value="TIDAK">Tidak</option>
 				</select>
@@ -148,8 +148,8 @@
 				<label for="idSpek">KONDISI: Pengobatan teroid | SARAN: Hasil sambung bulumata tidak bertahan lama *
 				</label> <br>
 				<br>
-				<select id="client_hepatitis" name="client_hepatitis" class="form-control">
-					<option value=0>Pilih</option>
+				<select id="teroid" name="teroid" class="form-control">
+
 					<option value="YA">Ya</option>
 					<option value="TIDAK">Tidak</option>
 				</select>
@@ -159,8 +159,8 @@
 				<label for="idSpek">Operasi lastik kurang dari 4 bulan *
 				</label> <br>
 				<br>
-				<select id="client_hepatitis" name="client_hepatitis" class="form-control">
-					<option value=0>Pilih</option>
+				<select id="lastik" name="lastik" class="form-control">
+
 					<option value="YA">Ya</option>
 					<option value="TIDAK">Tidak</option>
 				</select>
@@ -171,8 +171,8 @@
 				<label for="idSpek">KONDISI: Pakai Softlense | SARAN: Lebih baik mencopot soft lense pada saatpengerjaan *
 				</label> <br>
 				<br>
-				<select id="client_hepatitis" name="client_hepatitis" class="form-control">
-					<option value=0>Pilih</option>
+				<select id="softlens" name="softlens" class="form-control">
+
 					<option value="YA">Ya</option>
 					<option value="TIDAK">Tidak</option>
 				</select>
@@ -182,8 +182,8 @@
 				<label for="idSpek">KONDISI: Kulit berminyak / rambut berminyak | SARAN: Minyak akan mengurangi kekuatan sambungbulumata, membuat sambung bulumata lebih tidak tahan lama*
 				</label> <br>
 				<br>
-				<select id="client_hepatitis" name="client_hepatitis" class="form-control">
-					<option value=0>Pilih</option>
+				<select id="kulit_berminyak" name="kulit_berminyak" class="form-control">
+
 					<option value="YA">Ya</option>
 					<option value="TIDAK">Tidak</option>
 				</select>
@@ -199,51 +199,51 @@
 					</div>
 					<div class="col-12">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" name="membacasetuju" id="membacasetuju">
+							<input class="form-check-input" type="checkbox" name="state5" id="state5">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								No mascara sama sekali
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" name="membacasetuju" id="membacasetuju">
+							<input class="form-check-input" type="checkbox" name="state6" id="state6">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Bulumata disisir setiap hari menggunakan mascara wand
 
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" name="membacasetuju" id="membacasetuju">
+							<input class="form-check-input" type="checkbox" name="state7" id="state7">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								No oil based produk di sekitar mata
 							</label>
 						</div>
 
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" name="membacasetuju" id="membacasetuju">
+							<input class="form-check-input" type="checkbox" name="state8" id="state8">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Hindari terkena air 24 jam setelah pemasangan bulumata
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" name="membacasetuju" id="membacasetuju">
+							<input class="form-check-input" type="checkbox" name="state9" id="state9">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								No tinting dan keriting bulumata pada lash extension
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" name="membacasetuju" id="membacasetuju">
+							<input class="form-check-input" type="checkbox" name="state10" id="state10">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								No mencabut atau mengucek lash extension
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" name="membacasetuju" id="membacasetuju">
+							<input class="form-check-input" type="checkbox" name="state11" id="state11">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Merawat sambung bulumata menggunakan mascara khusus untuk sambung bulumata
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" name="membacasetuju" id="membacasetuju">
+							<input class="form-check-input" type="checkbox" name="state12" id="state12">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Menggunakan serum bulumata setelah melakuan eyelash extension sebanyak 8x berturut
 							</label>
@@ -260,7 +260,7 @@
 					</div>
 					<div class="col-12">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" name="membacasetuju" id="membacasetuju">
+							<input class="form-check-input" type="checkbox" name="state13" id="state13">
 							<label class="form-check-label" for="flexCheckIndeterminate">
 								Ceklist Disini
 							</label>
@@ -334,8 +334,8 @@
 			$('#tombolDaftar').click(function(e) {
 				// console.log($('#state2').val())
 				// return false
-				var a1 = $('#membacasetuju').is(":checked");
-				var a2 = $('#state1').is(":checked");
+				var a1 = $('#state1').is(":checked");
+				var a2 = $('#state2').is(":checked");
 				var a3 = $('#state3').is(":checked");
 				var a4 = $('#state4').is(":checked");
 				var a5 = $('#state5').is(":checked");
@@ -346,74 +346,38 @@
 				var a11 = $('#state11').is(":checked");
 				var a12 = $('#state12').is(":checked");
 				var a13 = $('#state13').is(":checked");
-				var a14 = $('#state14').is(":checked");
-				var a15 = $('#state15').is(":checked");
-				var a16 = $('#state16').is(":checked");
-				var a17 = $('#state17').is(":checked");
-				var a18 = $('#state18').is(":checked");
 
 				var i1 = $('#nama').val();
 				var i2 = $('#tanggal_lahir').val();
-				var i3 = $('#client_nama').val();
-				var i4 = $('#client_alamat').val();
-				var i6 = $('#client_no_hp').val();
-				var i7 = $('#client_email').val();
+				var i3 = $('#client_no_hp').val();
+
 				var i8 = $('#after_care_nama_art').val();
 				var i9 = $('#after_care_nama_store').val();
 
 				if (
-					!a1 || !a2 || !a3 || !a4 || !a5 || !a6 || !a7 || !a8 || !a12 || !a11 || !a9 || !a13 || !a14 || !a15 || !a16 || !a17 || !a18 ||
-					!i1 || !i2 || !i3 ||
-					!i4 || !i6 ||
-					!i7 || !i8 || !i9
+					!a1 || !a2 || !a3 || !a4 || !a5 || !a6 || !a7 || !a8 || !a12 || !a11 || !a9 || !a13 ||
+					!i1 || !i2 || !i3 || !i8 || !i9
 				) {
 					Swal.fire({
 						icon: 'error',
-						title: 'Mohon Isi Semua Data...',
+						title: 'Mohon Isi Semua Data yang Di Butuhkan',
 						text: 'Anda Di Mohon Isi Semua Data',
-					})
-				} else if ($('#state2').val() == null) {
-					Swal.fire({
-						icon: 'error',
-						title: 'Mohon Pilih Tipe Sulam Dan Harga...',
-						text: 'Anda Di Mohon Isi Semua Data',
-					})
+					});
+					return false
 				} else {
+					console.log("sssss")
 					$("#formRegister").trigger('submit');
 					return false;
 				}
 			});
-			getSpek()
 
-			function getSpek() {
-				$.ajax({
-					url: bu + 'user/get_tbl_service_sulam',
-					method: 'post',
-					dataType: 'json',
-				}).done(function(e) {
-					// console.log(e);
-					if (e.status) {
-						html = '<option value="0" selected disabled>Silahkan Pilih </option>';
-						$.each(e.data, function(key, val) {
-							html += '<option value="' + val.value + '">' + val.html + '</option>';
-						});
-						$('#state2').html(html);
-					} else {
-						alert('Terjadi Kesalahan');
-					}
-				}).fail(function(e) {
-					// console.log(e);
-					alert('Terjadi Kesalahan');
-
-				});
-			}
 
 			$("#formRegister").submit(function(e) {
 				$('#registerBtn').html('<i class="fas fa-spinner fa-spin"></i> Tunggu.. Mendaftarkan..');
 				$('#registerBtn').prop('disabled', true);
 				$.ajax({
 					type: 'POST',
-					url: bu + 'user/simpan',
+					url: bu + 'user/simpanEyelash',
 					dataType: 'json',
 					data: new FormData(this),
 					processData: false,
@@ -431,7 +395,7 @@
 							text: e.message,
 						})
 						setInterval(() => {
-							window.location.href = bu + 'user/indexb';
+							window.location.href = bu + 'User/HasilEyelash';
 
 						}, 200);
 					} else {
@@ -487,54 +451,3 @@
 </style>
 
 </html>
-<div class="modal fade" id="MyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-
-				<h3>EYEBROW EMBROIDERY CONSENT & RELEASE AGREEMENT</h3>
-				<hr>
-
-				Form ini dibuat untuk calon customer mengerti dan paham betul tentang treatment yang akan di lakukan. Jika anda memiliki pertanyaan, silahkan bertanya.<br>
-
-				Meskipun treatment sulam alis saat efektif dam berhasil pada kebanyakan orang, tapi tidak ada jaminan pasti semua orang mendapatkan hasil yang sama. Tergantung kepada jenis kulit dan after care setelah sulam.<br><br>
-
-				Proses sulam alis adalah memasukkan pigment dengan menggores lapisan terluar kulit.
-				Semua bahan yang masuk kedalam kulit, menggunakan bahan sekali buang, dan langsung di buang setelah digunakan.<br><br>
-
-				Secara umum, hasil yang didapat adalah bagus, namun hasil yang sempurna, membutuhkan retouch/penggulangan setelah minimal 1 bulan, maksimal 3 bulan.<br><br>
-
-				Setelah proses sulam selesai, ada proses pengelupasan yang biasanya di mulai pada hari ke 3 sampai hari ke 7. Setelah kelupas sempurna, warna akan turun sampai 40-70% (tergantung jenis kulit dan after care). Dan setelah minggu ke 4 setelah sulam warna akan lebih nyata ( inilah hasil yang sebenarnya).<br><br>
-
-				Tebal dan tipisnya warna hasil sulam setelah kelupas, adalah tergantung dari masing2 jenis kulit, tidak ada patokan khusus.<br><br>
-
-				Pigment yang kami gunakan bersifat semi-permanent dan berbahan dasar herbal, jadi akan hilang dengan perlahan dari waktu ke waktu. Biasanya bertahan dari 1 th hingga 2 tahun. Dan agar selalu terlihat sempurna perlu di lakukan retouch setiap 6 bulan – 2 tahun sekali.<br><br>
-
-				RESIKO, KOMPLIKASI<br>
-				1. Sakit, walaupun proses sulam adalah hanya menggores lapisan luar kulit, tetap ada resiko rasa sakit atau ada rasa tidak nyaman. Rasa sakit / tidak nyaman pada setiap orang berbeda.<br>
-
-				2. Infeksi, meskipun resiko infeksi sangat kecil, tapi tetap harus di perhatikan selalu kebersihan area yang di sulam agar selalu bersih dan steril.<br>
-
-				3. Warna tidak rata, hasil seperti ini di karenakan after care yang tidak di lakukan dengan benar, atau pada saat pengerjaan mengeluarkan darah, kulit tipis, kulit berminyak , dsb. Buatlah jadwal retouch<br>
-
-				4. Warna berubah, yang dimaksud warna berubah adalah warna menjadi lebih pudar atau lebih gelap dari hasil pertama sulam. Dikarenakan tingkat penyerapan setiap kulit orang berbeda.<br>
-
-				5. Tidak balance, sesungguhnya tidak ada wajah yang 100 % balance, tetapi tetap kami mengusahakan membuat se-balance mungkin dengan teknik pengukuran.<br>
-
-				6. Bengkak, situasi yang amat sangat jarang, bila ada bisa dibantu kompres es, hilang dlm 1- 5 hari maksimal.<br>
-
-				7. Anestesi, dalam proses sulam , kami tidak menggunakan anestesi
-				Nama dan foto yang terkait dengan Akun Google Anda akan dicatat saat Anda mengupload file dan mengirim formulir ini.<br>
-
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			</div>
-		</div>
-	</div>
-</div>
