@@ -71,11 +71,11 @@
 			var bu = '<?= base_url(); ?>';
 
 			$('#tombolEyelash').click(function(e) {
-				window.location.href = bu + "user/eyelash";
+				window.location.href = bu + "eyelash";
 				return false
 			});
 			$('#tombolSulam').click(function(e) {
-				window.location.href = bu + "user/";
+				window.location.href = bu + "sulam";
 				return false
 			});
 

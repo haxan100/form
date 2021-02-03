@@ -24,11 +24,19 @@
 						</a>
 					</li>
 					<li class="nav-item ">
-						<a class="nav-link" href="./tables.html">
-							<i class="material-icons">content_paste</i>
-							<p>Table List</p>
+						<a class="nav-link" href="<?= base_url() ?>admin/master_surveyA">
+							<i class=" material-icons">content_paste</i>
+							<p>Hasil Form Sulam Alis</p>
 						</a>
 					</li>
+
+					<li class="nav-item ">
+						<a class="nav-link" href="<?= base_url() ?>admin/master_surveyB">
+							<i class=" material-icons">content_paste</i>
+							<p>Hasil Form Eyelish</p>
+						</a>
+					</li>
+					
 				</ul>
 			</div>
 		</div>
