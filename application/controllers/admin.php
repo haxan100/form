@@ -265,13 +265,14 @@ class Admin extends CI_Controller {
 	public function hapusDataSurveyEyelish()
 	{
 		$IDService = $this->input->post('IDService', true);
-		$data = $this->SemuaModel->getSemuaById(' tbl_service_sulam', 'IDService', $IDService);
+		$data = $this->SemuaModel->getSemuaById('tbl_data_survey_eyelash', 'id_survey_eyelash', $IDService);
+
 		$status = false;
 		$message = 'Gagal menghapus Data!';
 		if (count($data) == 0) {
 			$message .= '<br>Tidak terdapat Data yang dimaksud.';
 		} else {
-			$hasil = $this->SemuaModel->hapus('tbl_service_sulam', 'IDService', $IDService);
+			$hasil = $this->SemuaModel->hapus('tbl_data_survey_eyelash', 'id_survey_eyelash', $IDService);
 			if ($hasil) {
 				$status = true;
 				$message = 'Berhasil menghapus Data: <b>';

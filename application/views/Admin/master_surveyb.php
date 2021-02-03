@@ -159,7 +159,7 @@
 
 			"columnDefs": [{
 					"targets": [
-						1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 
+						1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
 					],
 					"className": "dt-body-center dt-head-center",
 					"width": "20px",
@@ -266,7 +266,7 @@
 			}
 		}
 		$('body').on('click', '.btnHapus', function() {
-			var IDService = $(this).data('idservice');
+			var IDService = $(this).data('id_survey_eyelash');
 			Swal.fire({
 				title: 'Are you sure?',
 				text: "Hapus Data Ini",
