@@ -205,4 +205,9 @@ class user extends CI_Controller {
 		$this->session->sess_destroy();
 		$this->load->view('User/USerForm2');
 	}
+	public function menu()
+	{
+		$this->session->sess_destroy();
+		$this->load->view('User/menu');
+	}
 }
