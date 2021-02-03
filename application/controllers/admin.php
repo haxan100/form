@@ -170,7 +170,7 @@ class Admin extends CI_Controller {
 		$start  = isset($_POST['start']) ? $_POST['start'] : 0;
 		$no = $start + 1;
 		foreach ($dt['data']->result() as $row) {
-// var_dump($row);die;
+		// var_dump($row);die;
 			$fields = array($no++);
 			$fields[] = $row->name;
 			$fields[] = $row->ServiceName;
@@ -209,5 +209,79 @@ class Admin extends CI_Controller {
 		}
 		echo json_encode($datatable);
 		exit();
+	}
+	public function master_surveyB()
+	{
+		$this->load->view('Templates/Admin/header');
+		$this->load->view('Templates/Admin/sidebar');
+		$this->load->view('Admin/master_surveyb');
+		$this->load->view('Templates/Admin/footer');
+	}
+	public function getAllDataSurveyEyelish()
+	{
+		$bu = base_url();
+		$dt = $this->SulamModel->dt_eyelish($_POST);
+		$datatable['draw']            = isset($_POST['draw']) ? $_POST['draw'] : 1;
+		$datatable['recordsTotal']    = $dt['totalData'];
+		$datatable['recordsFiltered'] = $dt['totalData'];
+		$datatable['data']            = array();
+		$start  = isset($_POST['start']) ? $_POST['start'] : 0;
+		$no = $start + 1;
+		foreach ($dt['data']->result() as $row) {
+			// var_dump($row);die;
+			$fields = array($no++);
+			$fields[] = $row->name;
+			$fields[] = $row->Nomor_Service;
+			$fields[] = $row->no_phone;
+
+			$fields[] = $row->alergi_lem;
+			$fields[] = $row->pengobatan_teriod;
+			$fields[] = $row->ops_lastik;
+			$fields[] = $row->kemoterapi;
+			$fields[] = $row->pakai_softlens;
+			$fields[] = $row->kulit_berminyak;
+			$fields[] = $row->nama_art;
+			$fields[] = $row->nama_store;
+
+			$fields[] =  '<img class="img-fluid" id="foto_wrapper" id="foto_wrapper"   src="' . $bu . '/upload/images/eyelash/' . $row->foto_art . ' "/> ';
+
+			$fields[] = '   
+
+        <button class="btn btn-danger my-1 btn-blocks  btnHapus text-white" 
+          data-id_survey_eyelash="' . $row->id_survey_eyelash . '"
+          data-	name="' . $row->name . '"
+          data-	Nomor_Service="' . $row->Nomor_Service . '"
+
+        ><i class="fas fa-trash"></i> Hapus</button>
+        ';
+
+
+
+			$datatable['data'][] = $fields;
+		}
+		echo json_encode($datatable);
+		exit();
+	}
+	public function hapusDataSurveyEyelish()
+	{
+		$IDService = $this->input->post('IDService', true);
+		$data = $this->SemuaModel->getSemuaById(' tbl_service_sulam', 'IDService', $IDService);
+		$status = false;
+		$message = 'Gagal menghapus Data!';
+		if (count($data) == 0) {
+			$message .= '<br>Tidak terdapat Data yang dimaksud.';
+		} else {
+			$hasil = $this->SemuaModel->hapus('tbl_service_sulam', 'IDService', $IDService);
+			if ($hasil) {
+				$status = true;
+				$message = 'Berhasil menghapus Data: <b>';
+			} else {
+				$message .= 'Terjadi kesalahan. #ADM09B';
+			}
+		}
+		echo json_encode(array(
+			'status' => $status,
+			'message' => $message,
+		));
 	}
 }
