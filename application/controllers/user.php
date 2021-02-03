@@ -200,4 +200,9 @@ class user extends CI_Controller {
 
 		$this->load->view('User/hasilForm1');
 	}
+	public function eyelash ()
+	{
+		$this->session->sess_destroy();
+		$this->load->view('User/USerForm2');
+	}
 }
