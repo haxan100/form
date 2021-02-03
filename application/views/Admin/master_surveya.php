@@ -163,8 +163,8 @@
 			},
 
 			"columnDefs": [{
-					"targets":[
-						1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+					"targets": [
+						1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
 					],
 					"className": "dt-body-center dt-head-center",
 					"width": "20px",
@@ -177,7 +177,7 @@
 				{
 					"targets": 2,
 					"className": "dt-body-center dt-head-center"
-				}, 
+				},
 			],
 			"order": [
 				[1, "asc"]
@@ -271,7 +271,7 @@
 			}
 		}
 		$('body').on('click', '.btnHapus', function() {
-			var IDService = $(this).data('idservice');
+			var IDService = $(this).data('id_survey_sulam');
 			Swal.fire({
 				title: 'Are you sure?',
 				text: "Hapus Data Ini",
@@ -285,7 +285,7 @@
 
 					$.ajax({
 						type: "post",
-						url: '<?= base_url('admin/hapusDataSurveyFoto'); ?>',
+						url: '<?= base_url('admin/hapusDataSurvey'); ?>',
 						data: {
 							IDService,
 						},

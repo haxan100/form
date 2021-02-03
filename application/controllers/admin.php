@@ -130,6 +130,28 @@ class Admin extends CI_Controller {
 			'message' => $message,
 		));
 	}
+	public function hapusDataSurvey()
+	{
+		$IDService = $this->input->post('IDService', true);
+		$data = $this->SemuaModel->getSemuaById(' tbl_data_survey_sulam_alis', 'id_survey_sulam', $IDService);
+		$status = false;
+		$message = 'Gagal menghapus Data!';
+		if (count($data) == 0) {
+			$message .= '<br>Tidak terdapat Data yang dimaksud.';
+		} else {
+			$hasil = $this->SemuaModel->hapus('tbl_data_survey_sulam_alis', 'id_survey_sulam', $IDService);
+			if ($hasil) {
+				$status = true;
+				$message = 'Berhasil menghapus Data: <b>';
+			} else {
+				$message .= 'Terjadi kesalahan. #ADM09B';
+			}
+		}
+		echo json_encode(array(
+			'status' => $status,
+			'message' => $message,
+		));
+	}
 	public function hapusDataSurveyFoto()
 	{
 		$IDService = $this->input->post('IDService', true);
