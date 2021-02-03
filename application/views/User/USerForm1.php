@@ -26,7 +26,7 @@
 			<form id="formRegister">
 				<h3>Consent form Sulam Alis</h3>
 				<?php
-					// var_dump($_SESSION); 
+				// var_dump($_SESSION); 
 				?>
 
 				<div class="TulisanIni">
@@ -744,6 +744,8 @@
 				return false;
 			});
 
+			$('#MyModal').modal('show');
+			console.log("s")
 		});
 	</script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
