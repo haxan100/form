@@ -15,6 +15,9 @@ class Pdfview extends CI_Controller {
 	}
 	public function getPrinSatu($id=999)
 	{
+		
+		$id= $_GET['id'];
+		// var_dump($_GET['id']);die;
 		$this->load->library('pdfgenerator');
 
 		// title dari pdf

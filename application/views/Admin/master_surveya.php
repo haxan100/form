@@ -320,6 +320,11 @@
 			});
 
 		});
+		$('body').on('click', '.btnPrint', function() {
+
+			var ID = $(this).data('id_survey_sulam');
+			window.location.href = bu + 'Pdfview/getPrinSatu?id=' + ID;
+		})
 
 		$('body').on('click', '.btnEditAdmin', function() {
 			$('#modalProduk').modal('show');
