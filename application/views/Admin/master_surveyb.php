@@ -265,6 +265,12 @@
 					.html(message);
 			}
 		}
+		$('body').on('click', '.btnPrint', function() {
+
+			var ID = $(this).data('id_survey_eyelash');
+			window.location.href = bu + 'Pdfview/getPrinDua?id=' + ID;
+		})
+
 		$('body').on('click', '.btnHapus', function() {
 			var IDService = $(this).data('id_survey_eyelash');
 			Swal.fire({

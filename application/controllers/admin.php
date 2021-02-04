@@ -273,6 +273,11 @@ class Admin extends CI_Controller {
 
 			$fields[] = '   
 
+    	<button class="btn btn-info my-1 btn-blocks  btnPrint text-white" 
+		  data-id_survey_eyelash="' . $row->id_survey_eyelash . '"
+		  
+		><i class="fas fa-print"></i> Print</button>
+
         <button class="btn btn-danger my-1 btn-blocks  btnHapus text-white" 
           data-id_survey_eyelash="' . $row->id_survey_eyelash . '"
           data-	name="' . $row->name . '"

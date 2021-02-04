@@ -244,6 +244,14 @@ class SulamModel extends CI_Model {
 		
 		
 	}
+	public function getSulamDua($id)
+	{
+		$this->db->from('tbl_data_survey_eyelash sa');
+		$this->db->where('id_survey_eyelash', $id);
+
+		$sql = $this->db->get()->row();
+		return $sql;
+	}
                         
                             
                         

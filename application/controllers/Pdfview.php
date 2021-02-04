@@ -38,6 +38,32 @@ class Pdfview extends CI_Controller {
 
 
 	}
+	public function getPrinDua($id = 999)
+	{
+
+		$id = $_GET['id'];
+		// var_dump($_GET['id']);die;
+		$this->load->library('pdfgenerator');
+
+		// title dari pdf
+
+		$file_pdf = 'LaporanForm';
+		// setting paper
+		$paper = 'A4';
+		//orientasi paper potrait / landscape
+		$orientation = "landscape";
+		$data['datanya'] = $this->SulamModel->getSulamDua($id);
+		$data['title_pdf'] = 'Laporan Form User : ' . $data['datanya']->name;
+		// var_dump($data);die;
+
+		$html = $this->load->view('User/fromSulamDuaPDF', $data, true);
+
+		// run dompdf
+		$this->pdfgenerator->generate($html, $file_pdf, $paper, $orientation);
+	}
+
+
+
     public function index()
     {
         // panggil library yang kita buat sebelumnya yang bernama pdfgenerator
