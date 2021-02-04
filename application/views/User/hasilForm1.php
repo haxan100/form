@@ -30,26 +30,50 @@ $nomorSer = $_SESSION['Nomor_Service'];
 			<img src="<?= base_url() ?>/templates/user/images/image-1.png" alt="" class="image-1">
 			<form id="formRegister">
 				<h3>Terimakasih</h3>
-				<h3>Consent form Sulam Alis</h3>
+				<h3>EYELASH EXTENSION</h3>
 				<h5>Berikut Ini Adalah Nomor Service Kamu</h5>
 
 				<br>
 				<hr>
-				<b>Nama</b><br>
-				<div class="form-holder">
+				<b></b><br>
+				<div class="form-holder" style="
+					border-radius: 8px;
+					background-color: #616b68;
+					padding: 10px;
+				">
 					<span class="lnr lnr-user"></span>
-					<input type="text" class="form-control" id="nama" name="nama" readonly value=<?= $nama ?> placeholder="Nama">
+					<div class="TextKu" style="
+						font-size: medium;
+						margin-left: 20%;
+						font-weight: bolder;
+					">
+						<p style="
+			color: aliceblue;
+				">Nama : <?= $nama ?></p>
+					</div>
 				</div>
-				<b>Service Nomor</b><br>
-				<div class="form-holder">
-					<span class="lnr lnr-user"></span>
-					<input type="text" class="form-control" id="nama" name="nama" value=<?= $nomorSer ?> readonly placeholder="Nama">
+				<br>
+				<div class="form-holder" style="
+					border-radius: 8px;
+					background-color: #616b68;
+					padding: 10px;
+				">
+					<div class="TextKu" style="
+						font-size: medium;
+						margin-left: 20%;
+						font-weight: bolder;
+					">
+						<span class="lnr lnr-user"></span>
+						<p style="
+			color: aliceblue;
+		">Service Nomor : <?= $nomorSer ?></p>
+					</div>
 				</div>
 
 
 
 				<button id="tombolDaftar">
-					<span>Submit</span>
+					<span>Close</span>
 				</button>
 			</form>
 			<img src="<?= base_url() ?>/templates/user/images/image-2.png" alt="" class="image-2">
@@ -75,52 +99,11 @@ $nomorSer = $_SESSION['Nomor_Service'];
 
 			var bu = '<?= base_url(); ?>';
 
-
 			$('#tombolDaftar').click(function(e) {
 
-				var a1 = $('#membacasetuju').is(":checked");
-				var a2 = $('#state1').is(":checked");
-				var a3 = $('#state3').is(":checked");
-				var a4 = $('#state4').is(":checked");
-				var a5 = $('#state5').is(":checked");
-				var a6 = $('#state6').is(":checked");
-				var a7 = $('#state7').is(":checked");
-				var a8 = $('#state8').is(":checked");
-				var a9 = $('#state9').is(":checked");
-				var a11 = $('#state11').is(":checked");
-				var a12 = $('#state12').is(":checked");
-				var a13 = $('#state13').is(":checked");
-				var a14 = $('#state14').is(":checked");
-				var a15 = $('#state15').is(":checked");
-				var a16 = $('#state16').is(":checked");
-				var a17 = $('#state17').is(":checked");
-				var a18 = $('#state18').is(":checked");
-
-				var i1 = $('#nama').val();
-				var i2 = $('#tanggal_lahir').val();
-				var i3 = $('#client_nama').val();
-				var i4 = $('#client_alamat').val();
-				var i6 = $('#client_no_hp').val();
-				var i7 = $('#client_email').val();
-				var i8 = $('#after_care_nama_art').val();
-				var i9 = $('#after_care_nama_store').val();
-
-				if (
-					!a1 || !a2 || !a3 || !a4 || !a5 || !a6 || !a7 || !a8 || !a12 || !a11 || !a9 || !a13 || !a14 || !a15 || !a16 || !a17 || !a18 ||
-					!i1 || !i2 || !i3 ||
-					!i4 || !i5 || !i6 ||
-					!i7 || !i8 || !i9
-				) {
-					Swal.fire({
-						icon: 'error',
-						title: 'Mohon Isi Semua Data...',
-						text: 'Anda Di Mohon Isi Semua Data',
-					})
-				} else {
-					$("#formRegister").trigger('submit');
-					return false;
-				}
+				window.location.href = bu + 'User/menu';
 			});
+
 			getSpek()
 
 			function getSpek() {

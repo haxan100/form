@@ -48,8 +48,8 @@ $nomorSer = $_SESSION['Nomor_Service'];
 						font-weight: bolder;
 					">
 						<p style="
-    color: aliceblue;
-">Nama : <?= $nama ?></p>
+			color: aliceblue;
+				">Nama : <?= $nama ?></p>
 					</div>
 				</div>
 				<br>
@@ -65,8 +65,8 @@ $nomorSer = $_SESSION['Nomor_Service'];
 					">
 						<span class="lnr lnr-user"></span>
 						<p style="
-    color: aliceblue;
-">Service Nomor : <?= $nomorSer ?></p>
+			color: aliceblue;
+		">Service Nomor : <?= $nomorSer ?></p>
 					</div>
 				</div>
 

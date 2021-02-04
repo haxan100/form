@@ -120,13 +120,13 @@ class User extends CI_Controller {
 
 		if (!$c) {
 			$message = 'Gambar Harap Di pilih';
-			$status = false;
+			// $status = false;
 			$foto_error = true;
 		} else {
 			$cekGambar = $_FILES['foto']['name'];
 			if ($cekGambar == '') {
 				$message = 'Gambar Harap Di pilih';
-				$status = false;
+				// $status = false;
 				$foto_error = true;
 			} else {
 				$foto_error = false;
@@ -145,6 +145,9 @@ class User extends CI_Controller {
 			$this->upload->initialize($configUpload);
 			$upload_1 = $this->upload->do_upload('foto');
 
+		} else {
+
+			$configUpload['file_name'] = "tidakADAFoto";
 		}
 		if ($status) {
 			$now = date('YmdHis');
