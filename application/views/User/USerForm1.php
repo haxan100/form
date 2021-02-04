@@ -58,7 +58,7 @@
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" name="membacasetuju" id="membacasetuju">
 							<label class="form-check-label" for="flexCheckIndeterminate">
-								Ceklist Disini
+								Setuju
 							</label>
 						</div>
 					</div>
@@ -80,7 +80,7 @@
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" name="state1" id="state1">
 							<label class="form-check-label" for="flexCheckIndeterminate">
-								Ceklist Disini
+								Setuju
 							</label>
 						</div>
 					</div>
@@ -109,7 +109,7 @@
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" name="state3" id="state3">
 							<label class="form-check-label" for="flexCheckIndeterminate">
-								Ceklist Disini
+								Setuju
 							</label>
 						</div>
 					</div>
@@ -126,7 +126,7 @@
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" name="state4" id="state4">
 							<label class="form-check-label" for="flexCheckIndeterminate">
-								Ceklist Disini
+								Setuju
 							</label>
 						</div>
 					</div>
@@ -144,7 +144,7 @@
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" name="state5" id="state5">
 							<label class="form-check-label" for="flexCheckIndeterminate">
-								Ceklist Disini
+								Setuju
 							</label>
 						</div>
 					</div>
@@ -161,7 +161,7 @@
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" name="state6" id="state6">
 							<label class="form-check-label" for="flexCheckIndeterminate">
-								Ceklist Disini
+								Setuju
 							</label>
 						</div>
 					</div>
@@ -179,7 +179,7 @@
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" name="state7" id="state7">
 							<label class="form-check-label" for="flexCheckIndeterminate">
-								Ceklist Disini
+								Setuju
 							</label>
 						</div>
 					</div>
@@ -198,7 +198,7 @@
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" name="state8" id="state8">
 							<label class="form-check-label" for="flexCheckIndeterminate">
-								Ceklist Disini
+								Setuju
 							</label>
 						</div>
 					</div>
@@ -210,24 +210,11 @@
 				</div>
 
 				<div class="row">
+					<select id="retouch" name="retouch" class="form-control">
+						<option value="Tidak ">Tidak Termasuk Retouch</option>
+						<option value="Ya"> Ya Termasuk Retouch</option>
+					</select>
 					<div class="col-6">
-					</div>
-					<div class="col-12">
-						<div class="form-check">
-							<input class="form-check-input" type="checkbox" name="state9" id="state9">
-							<label class="form-check-label" for="flexCheckIndeterminate">
-								Ceklist Disini
-							</label>
-						</div>
-					</div>
-					<br>
-					<div class="col-12">
-						<div class="form-check">
-							<input class="form-check-input" type="checkbox" name="state10" id="state10">
-							<label class="form-check-label" for="flexCheckIndeterminate">
-								Ceklist Disini
-							</label>
-						</div>
 					</div>
 				</div><br>
 
@@ -243,7 +230,7 @@
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" name="state11" id="state11">
 							<label class="form-check-label" for="flexCheckIndeterminate">
-								Ceklist Disini
+								Setuju
 							</label>
 						</div>
 					</div>
@@ -260,7 +247,7 @@
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" name="state12" id="state12">
 							<label class="form-check-label" for="flexCheckIndeterminate">
-								Ceklist Disini
+								Setuju
 							</label>
 						</div>
 					</div>
@@ -279,7 +266,7 @@
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" name="state13" id="state13">
 							<label class="form-check-label" for="flexCheckIndeterminate">
-								Ceklist Disini
+								Setuju
 							</label>
 						</div>
 					</div>
@@ -298,7 +285,7 @@
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" name="state14" id="state14">
 							<label class="form-check-label" for="flexCheckIndeterminate">
-								Ceklist Disini
+								Setuju
 							</label>
 						</div>
 					</div>
@@ -316,7 +303,7 @@
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" name="state15" id="state15">
 							<label class="form-check-label" for="flexCheckIndeterminate">
-								Ceklist Disini
+								Setuju
 							</label>
 						</div>
 					</div>
@@ -468,7 +455,7 @@
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" name="state16" id="state16">
 							<label class="form-check-label" for="flexCheckIndeterminate">
-								Ceklist Disini
+								Setuju
 							</label>
 						</div>
 					</div>
@@ -538,7 +525,7 @@
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" name="state17" id="state17">
 							<label class="form-check-label" for="flexCheckIndeterminate">
-								Ceklist Disini
+								Setuju
 							</label>
 						</div>
 					</div>
@@ -558,7 +545,7 @@
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" name="state18" id="state18">
 							<label class="form-check-label" for="flexCheckIndeterminate">
-								Ceklist Disini
+								Setuju
 							</label>
 						</div>
 					</div>

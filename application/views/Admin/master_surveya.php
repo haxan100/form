@@ -27,6 +27,7 @@
 										<th> Oily Skin</th>
 										<th>Chemical Peels</th>
 										<th>Pregnant</th>
+										<th>Retouch</th>
 										<th>Name ART</th>
 										<th>Store</th>
 										<th>Foto</th>

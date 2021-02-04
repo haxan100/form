@@ -208,6 +208,7 @@ class Admin extends CI_Controller {
 			$fields[] = $row->oily_skin;
 			$fields[] = $row->do_chemical_peels;
 			$fields[] = $row->pregnant;
+			$fields[] = $row->retouch;
 
 			$fields[] = $row->name_our_art;
 			$fields[] = $row->store;

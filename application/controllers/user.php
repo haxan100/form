@@ -36,7 +36,7 @@ class User extends CI_Controller {
 	}
 	public function simpan()
 	{
-
+		// var_dump($_POST);die;
 		$seed = str_split('abcdefghijklmnopqrstuvwxyz'
 		. 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 		. '0123456789'); // and any other characters
@@ -66,7 +66,8 @@ class User extends CI_Controller {
 		$client_alergi_metal = $this->input->post('client_alergi_metal');
 		$after_care_nama_art = $this->input->post('after_care_nama_art');
 		$after_care_nama_store = $this->input->post('after_care_nama_store');
-
+		$retouch = $this->input->post('retouch');
+		
 		$cekNama =  $this->SemuaModel->getByID('name', 'tbl_data_survey_sulam_alis' ,$nama);
 		$cekNoHp =  $this->SemuaModel->getByID('no_phone', 'tbl_data_survey_sulam_alis', $client_no_hp);
 		$cekEmail =  $this->SemuaModel->getByID('email', 'tbl_data_survey_sulam_alis', $client_email);
@@ -166,6 +167,8 @@ class User extends CI_Controller {
 				'do_chemical_peels' => $client_chemical_peeling,
 				'pregnant' => $client_hamil,
 				'no_phone' => $client_no_hp,
+				'retouch' => $retouch,
+				
 				
 
 				'drinking_alcohol_in_the_last_24_hours' => $client_alkohol,

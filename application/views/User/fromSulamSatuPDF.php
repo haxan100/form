@@ -16,7 +16,7 @@
 		#table td,
 		#table th {
 			border: 1px solid #ddd;
-			padding: 10px;
+			padding: 5px;
 		}
 
 		#table tr:nth-child(even) {
@@ -52,6 +52,7 @@
 				<th>Email</th>
 				<th>Botox </th>
 				<th>Diabetes</th>
+				<th>Retouch</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -64,6 +65,7 @@
 				<td><?= $datanya->email; ?></td>
 				<td><?= $datanya->client_botox; ?></td>
 				<td><?= $datanya->diabetes; ?></td>
+				<td><?= $datanya->retouch; ?></td>
 		</tbody>
 	</table>
 	<table id="table">
