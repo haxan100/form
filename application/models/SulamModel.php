@@ -233,11 +233,21 @@ class SulamModel extends CI_Model {
 			'data' => $data,
 		);
 	}
+	public function getSulamSatu($id)
+	{
+		$this->db->from('tbl_data_survey_sulam_alis sa');		
+		$this->db->where('id_survey_sulam', $id);
+		$this->db->join('tbl_service_sulam ts', 'ts.IDService = sa.IDService', 'left');
+		
+		$sql = $this->db->get()->row();
+		return $sql;
+		
+		
+	}
                         
                             
                         
 }
-                        
 /* End of file SulamModel.php */
     
                         
