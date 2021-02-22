@@ -12,6 +12,8 @@ class Admin extends CI_Controller {
 		//memanggil recapca
 		$this->load->model('SulamModel');
 		$this->load->model('SemuaModel');
+		$this->load->model('VoucherModel');
+		
 	}
 
 	public function index()
@@ -217,18 +219,18 @@ class Admin extends CI_Controller {
 
 			$fields[] = '
    
-    <button class="btn btn-info my-1 btn-blocks  btnPrint text-white" 
-		  data-id_survey_sulam="' . $row->id_survey_sulam . '"
-		  
-		><i class="fas fa-print"></i> Print</button>
-		
-        <button class="btn btn-danger my-1 btn-blocks  btnHapus text-white" 
-          data-id_survey_sulam="' . $row->id_survey_sulam . '"
-          data-	name="' . $row->	name . '"
-          data-	Nomor_Service="' . $row->	Nomor_Service . '"
+		<button class="btn btn-info my-1 btn-blocks  btnPrint text-white" 
+			data-id_survey_sulam="' . $row->id_survey_sulam . '"
+			
+			><i class="fas fa-print"></i> Print</button>
+			
+			<button class="btn btn-danger my-1 btn-blocks  btnHapus text-white" 
+			data-id_survey_sulam="' . $row->id_survey_sulam . '"
+			data-	name="' . $row->	name . '"
+			data-	Nomor_Service="' . $row->	Nomor_Service . '"
 
-        ><i class="fas fa-trash"></i> Hapus</button>
-        ';
+			><i class="fas fa-trash"></i> Hapus</button>
+			';
 
 
 
@@ -316,5 +318,125 @@ class Admin extends CI_Controller {
 			'status' => $status,
 			'message' => $message,
 		));
+	}
+	public function master_voucher()
+	{
+		$this->load->view('Templates/Admin/header');
+		$this->load->view('Templates/Admin/sidebar');
+		$this->load->view('Admin/master_voucher');
+		$this->load->view('Templates/Admin/footer');
+	}
+	public function getAllDataVoucher()
+	{
+		$bu = base_url();
+		$dt = $this->VoucherModel->dt_voucher($_POST);
+		$datatable['draw']            = isset($_POST['draw']) ? $_POST['draw'] : 1;
+		$datatable['recordsTotal']    = $dt['totalData'];
+		$datatable['recordsFiltered'] = $dt['totalData'];
+		$datatable['data']            = array();
+		$start  = isset($_POST['start']) ? $_POST['start'] : 0;
+		$no = $start + 1;
+		foreach ($dt['data']->result() as $row) {
+			// var_dump($row);die;
+			$fields = array($no++);
+			$fields[] = $row->VoucherName;
+			$fields[] = $row->VoucherStartDate;
+			$fields[] = $row->VoucherEndDate;
+			$fields[] = $row->VoucherQty;
+			$fields[] = $row->VoucherPrice;
+
+			$fields[] = '
+   
+			<button class="btn btn-info my-1 btn-blocks  btnPrint text-white" 
+			data-VoucherID="' . $row->VoucherID . '"
+			
+			><i class="fas fa-print"></i> Print</button>
+			
+			<button class="btn btn-danger my-1 btn-blocks  btnHapus text-white" 
+			data-VoucherID="' . $row->VoucherID . '"
+
+			data-VoucherName="' . $row->VoucherName . '"
+			data-VoucherQty="' . $row->VoucherQty . '"
+
+			><i class="fas fa-trash"></i> Hapus</button>
+			';
+
+
+
+			$datatable['data'][] = $fields;
+		}
+		echo json_encode($datatable);
+		exit();
+	}
+	public function tambah_voucher()
+	{
+		$date = date('Ymdh');
+		$date = $date."00";
+		// var_dump($date);die;
+		$nama_voucher = $this->input->post('nama_voucher');
+		$harga = $this->input->post('harga');
+
+		$start_date = $this->input->post('start_date');
+		$end_date = $this->input->post('end_date');
+		$qty = $this->input->post('qty');
+		$harga = $this->input->post('harga');
+		$status = true;
+		$errorInputs = array();
+		if (empty($nama_voucher)) {
+			$status = false;
+			$errorInputs[] = array('#nama', 'Silahkan Isi Nama Service');
+		}
+		if (empty($qty)) {
+			$status = false;
+			$errorInputs[] = array('#qty', 'Silahkan Isi QTY');
+		}
+		if (empty($start_date)) {
+			$status = false;
+			$errorInputs[] = array('#start_date', 'Silahkan Isi Data');
+		}
+		if (empty($end_date)) {
+			$status = false;
+			$errorInputs[] = array('#end_date', 'Silahkan Isi Data');
+		}
+		if (empty($harga)) {
+			$status = false;
+			$errorInputs[] = array('#harga', 'Silahkan Isi Data');
+		}
+		// var_dump($status);die;
+
+		if ($status) {
+			$in = array(
+				'VoucherName' => $nama_voucher,
+				'VoucherStartDate' => $start_date,
+				'VoucherEndDate' => $end_date,
+				'VoucherQty' => $qty,
+				'VoucherPrice' => $harga,
+			);
+			$this->SemuaModel->Tambah('tblvoucher', $in);
+			$lastid = $this->db->insert_id();
+			$VNumber = $lastid .'00'.$date;
+			// var_dump($VNumber);die;
+
+			for ($i=1; $i <= $qty; $i++) { 
+				// var_dump($VNumber.$i);die;
+				$inDet = array(
+					'VoucherID' =>$lastid,
+					'VoucherNumber' => $VNumber.$i,
+			 	);
+				$this->SemuaModel->Tambah('tblvouchercontent', $inDet);
+
+				# code...
+			}
+
+			$status = true;
+			$message = "Berhasil Menambah Data";
+		}
+
+		echo json_encode(array(
+			'status' => $status,
+			// 'message' => $message,
+			'errorInputs' => $errorInputs
+		));
+		# code...
 	}
 }

@@ -36,7 +36,13 @@
 							<p>Hasil Form Eyelish</p>
 						</a>
 					</li>
-					
+					<li class="nav-item ">
+						<a class="nav-link" href="<?= base_url() ?>admin/master_voucher">
+							<i class=" material-icons">card_giftcard</i>
+							<p>Master Voucher</p>
+						</a>
+					</li>
+
 				</ul>
 			</div>
 		</div>
