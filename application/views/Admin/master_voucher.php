@@ -281,7 +281,7 @@
 			}
 		}
 		$('body').on('click', '.btnHapus', function() {
-			var IDService = $(this).data('id_survey_sulam');
+			var IDService = $(this).data('voucherid');
 			Swal.fire({
 				title: 'Are you sure?',
 				text: "Hapus Data Ini",
@@ -295,7 +295,7 @@
 
 					$.ajax({
 						type: "post",
-						url: '<?= base_url('admin/hapusDataSurvey'); ?>',
+						url: '<?= base_url('admin/hapusDataVoucher'); ?>',
 						data: {
 							IDService,
 						},

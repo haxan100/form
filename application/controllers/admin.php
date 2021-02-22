@@ -439,4 +439,30 @@ class Admin extends CI_Controller {
 		));
 		# code...
 	}
+	public function hapusDataVoucher()
+	{
+		// var_dump($_POST);die;
+		$IDService = $this->input->post('IDService', true);
+		$data = $this->SemuaModel->getSemuaById('tblvoucher', 'VoucherID', $IDService);
+		$status = false;
+		$message = 'Gagal menghapus Data!';
+		if (count($data) == 0) {
+			$message .= '<br>Tidak terdapat Data yang dimaksud.';
+		} else {
+			$hasil = $this->SemuaModel->hapus('tblvoucher', 'VoucherID', $IDService);
+
+			if ($hasil) {
+				$hasil = $this->SemuaModel->hapus('tblvouchercontent', 'VoucherID', $IDService);
+				$status = true;
+				$message = 'Berhasil menghapus Data: <b>';
+
+			} else {
+				$message .= 'Terjadi kesalahan. #ADM09B';
+			}
+		}
+		echo json_encode(array(
+			'status' => $status,
+			'message' => $message,
+		));
+	}
 }
