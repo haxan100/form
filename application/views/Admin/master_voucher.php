@@ -48,11 +48,11 @@
 					</div>
 					<div class="form-group">
 						<label for="NamaService">Start Date Voucher</label>
-						<input type="date" class="form-control" id="start_date" name="start_date" aria-describedby="text" placeholder="Masukan Tanggal">
+						<input type="text" class="form-control" id="start_date" name="start_date" aria-describedby="text" placeholder="Masukan Tanggal">
 					</div>
 					<div class="form-group">
 						<label for="NamaService">End Date Voucher</label>
-						<input type="date" class="form-control" id="end_date" name="end_date" aria-describedby="emailHelp" placeholder="Masukan Tanggal">
+						<input type="text" class="form-control" id="end_date" name="end_date" aria-describedby="emailHelp" placeholder="Masukan Tanggal">
 					</div>
 					<div class="form-group">
 						<label for="Harga">QTY</label>
@@ -79,9 +79,9 @@
 	$(document).ready(function() {
 		var bu = '<?= base_url() ?>';
 		var url_form = bu + 'Admin/tambah_voucher';
-		var url_form_ubah = bu + 'admin/edit_user'
+		// var url_form_ubah = bu + 'admin/edit_user'
 		// $('#modalProduk').modal('show');
-		var url_form_ubah = bu + 'admin/editFotoSur';
+		var url_form_ubah = bu + 'admin/editVoucher';
 
 		$('#btnTambah').on('click', function() {
 			url_form = url_form;
@@ -338,17 +338,28 @@
 
 		$('body').on('click', '.btnEditAdmin', function() {
 			$('#modalProduk').modal('show');
-			$('#btnTambah').hide();
+			$('#btnTambahPRO').hide();
 			$('#btnUbah').show();
 			$('#labelEdit').show();
 			$('#labelTambah').hide();
+			
 
-			var idservice = $(this).data('idservice');
-			var servicename = $(this).data('servicename');
-			var price = $(this).data('price');
-			$('#idservice').val(idservice);
-			$('#nama_service').val(servicename);
-			$('#harga').val(price);
+			var VoucherID = $(this).data('voucherid');
+			var VoucherName = $(this).data('vouchername');
+			var VoucherStartDate = $(this).data('voucherstartdate');
+			var VoucherEndDate = $(this).data('voucherenddate');
+			var VoucherQty = $(this).data('voucherqty');
+			var VoucherPrice = $(this).data('voucherprice');
+
+			console.log(VoucherEndDate, VoucherEndDate)
+
+			$('#voucher_id').val(VoucherID);
+			$('#nama_voucher').val(VoucherName);
+			$('#start_date').val(VoucherStartDate);
+
+			$('#end_date').val(VoucherEndDate);
+			$('#qty').val(VoucherQty);
+			$('#harga').val(VoucherPrice);
 		});
 		$('#btnUbah').click(function(e) {
 			url_form = url_form_ubah;

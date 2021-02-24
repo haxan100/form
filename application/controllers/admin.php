@@ -337,20 +337,45 @@ class Admin extends CI_Controller {
 		$start  = isset($_POST['start']) ? $_POST['start'] : 0;
 		$no = $start + 1;
 		foreach ($dt['data']->result() as $row) {
-			// var_dump($row);die;
+			$mulai = $row->VoucherStartDate;
+			// $mulai = date("d/m/Y", strtotime($dates));
+
+			$akhir = $row->VoucherEndDate;
+			// $akhir = date("d/m/Y", strtotime($datesx));
+			// die;
 			$fields = array($no++);
 			$fields[] = $row->VoucherName;
-			$fields[] = $row->VoucherStartDate;
-			$fields[] = $row->VoucherEndDate;
+			$fields[] = $mulai;
+			$fields[] = $akhir;
 			$fields[] = $row->VoucherQty;
 			$fields[] = $row->VoucherPrice;
 
 			$fields[] = '
    
-			<button class="btn btn-info my-1 btn-blocks  btnPrint text-white" 
-			data-VoucherID="' . $row->VoucherID . '"
+			<button class="btn btn-info my-1 btn-blocks  btnEditAdmin text-white" 
+			data-voucherid="' . $row->VoucherID . '"
+			data-vouchername="' . $row->VoucherName . '"
+			data-voucherstartdate="' . $mulai . '"
+			data-voucherenddate="' . $akhir . '"
+
+			data-voucherqty="' . $row->VoucherQty . '"
+			data-voucherprice="' . $row->VoucherPrice . '"
 			
-			><i class="fas fa-print"></i> Print</button>
+			><i class="fas fa-edit"></i> Edit</button>
+
+
+			<button class="btn btn-default my-1 btn-blocks  btnEditAdmin text-white" 
+			data-voucherid="' . $row->VoucherID . '"
+			data-vouchername="' . $row->VoucherName . '"
+			data-voucherstartdate="' . $mulai . '"
+			data-voucherenddate="' . $akhir . '"
+
+			data-voucherqty="' . $row->VoucherQty . '"
+			data-voucherprice="' . $row->VoucherPrice . '"
+			
+			><i class="fas fa-eye"></i> Detail </button>
+
+
 			
 			<button class="btn btn-danger my-1 btn-blocks  btnHapus text-white" 
 			data-VoucherID="' . $row->VoucherID . '"
@@ -460,6 +485,76 @@ class Admin extends CI_Controller {
 				$message .= 'Terjadi kesalahan. #ADM09B';
 			}
 		}
+		echo json_encode(array(
+			'status' => $status,
+			'message' => $message,
+		));
+	}
+	public function editVoucher()
+	{
+
+		$date = date('Ymdh');
+		$date = $date."00";
+		// var_dump($_POST);die;
+		$voucher_id = $this->input->post('voucher_id');
+		$nama_voucher = $this->input->post('nama_voucher');
+		$start_date = $this->input->post('start_date');
+		$end_date = $this->input->post('end_date');
+		$qty = $this->input->post('qty');
+		$harga = $this->input->post('harga');
+		$status=true;
+		$message = "Berhasil Mengubah";
+		if(empty($harga)){
+			$status = false;
+			$message = "Harga harus Di Isi";
+		}
+		if (empty($nama_voucher)) {
+			$status = false;
+			$message = "Nama harus Di Isi";
+		}if (empty($qty)) {
+			$status = false;
+			$message = "QTY harus Di Isi";
+		}if (empty($start_date)) {
+			$status = false;
+			$message = "Tanggal Mulai harus Di Isi";
+		}if (empty($end_date)) {
+			$status = false;
+			$message = "Tanggal Akhir harus Di Isi";
+		}
+		if($status){			
+			$hasil = $this->SemuaModel->hapus('tblvouchercontent', 'VoucherID', $voucher_id);
+
+			$in = array(
+				'VoucherName' => $nama_voucher,
+				'VoucherPrice' => $harga,
+				'VoucherStartDate' => $start_date,
+				'VoucherEndDate' => $end_date,
+				'VoucherQty' => $qty,
+			);	
+
+			$VNumber = $voucher_id .'00'.$date;
+			for ($i=1; $i <= $qty; $i++) { 
+				// var_dump($VNumber.$i);die;
+				$inDet = array(
+					'VoucherID' =>$voucher_id,
+					'VoucherNumber' => $VNumber.$i,
+			 	);
+				$this->SemuaModel->Tambah('tblvouchercontent', $inDet);
+
+				# code...
+			}
+
+			$this->SemuaModel->Ubah(' tblvoucher', 'VoucherID', $in, $voucher_id);
+			$status = true;
+			$message = "Berhasil Mengubah Data";
+
+		}		
+		else{
+			
+			$status = false;
+			$message = "Gagal Mengubah Data";
+		}
+		
 		echo json_encode(array(
 			'status' => $status,
 			'message' => $message,
