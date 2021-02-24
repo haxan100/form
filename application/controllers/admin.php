@@ -607,6 +607,9 @@ class Admin extends CI_Controller {
 	}
 
 	  function simpan(){
+			$this->load->library('image_lib');
+			$this->load->helper('form');
+			$this->load->library('form_validation');
 		  $id = $_GET['id'];
         // $nim=$this->input->post('nim');
         // $nama=$this->input->post('nama');
@@ -634,5 +637,17 @@ class Admin extends CI_Controller {
         $params['size'] = 10;
         $params['savename'] = FCPATH.$config['imagedir'].$image_name; //simpan image QR CODE ke folder assets/images/
         $this->ciqrcode->generate($params); // fungsi untuk 
+
+		$imgConfig = array();								
+		$imgConfig['image_library'] = 'GD2';							
+		$imgConfig['source_image']  ='./assets/images/';
+		$imgConfig['wm_type']       = 'overlay';    								
+		$imgConfig['wm_overlay_path'] = './assets/images/27002021022404003.png';					
+		$this->load->library('image_lib', $imgConfig);								
+		$this->image_lib->initialize($imgConfig);
+		$this->image_lib->watermark();
+		$this->image_lib->clear();
+
+
     }
 }
