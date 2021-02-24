@@ -266,8 +266,8 @@ $url = $this->uri->segment(3);
 
 		
 		$('body').on('click', '.btnEditDetail', function() {
-			var id = $(this).data('voucherid');
-			window.location = bu + "Admin/masterDetailVoucher/" + id;
+			var id = $(this).data('vouchernumber');
+			window.location = bu + "Admin/simpan/?id=" + id;
 		});
 
 		function validasi(id, valid, message = '') {
