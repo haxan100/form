@@ -364,7 +364,7 @@ class Admin extends CI_Controller {
 			><i class="fas fa-edit"></i> Edit</button>
 
 
-			<button class="btn btn-default my-1 btn-blocks  btnEditAdmin text-white" 
+			<button class="btn btn-default my-1 btn-blocks  btnEditDetail text-white" 
 			data-voucherid="' . $row->VoucherID . '"
 			data-vouchername="' . $row->VoucherName . '"
 			data-voucherstartdate="' . $mulai . '"
@@ -559,5 +559,50 @@ class Admin extends CI_Controller {
 			'status' => $status,
 			'message' => $message,
 		));
+	}
+	public function masterDetailVoucher()
+	{
+		$this->load->view('Templates/Admin/header');
+		$this->load->view('Templates/Admin/sidebar');
+		$this->load->view('Admin/master_detail_voucher');
+		$this->load->view('Templates/Admin/footer');
+	}
+		public function getAllDataDetailVoucher()
+	{
+		$id= $_POST['id'];
+		$bu = base_url();
+		$dt = $this->VoucherModel->dt_voucher_detail($_POST);
+		$datatable['draw']            = isset($_POST['draw']) ? $_POST['draw'] : 1;
+		$datatable['recordsTotal']    = $dt['totalData'];
+		$datatable['recordsFiltered'] = $dt['totalData'];
+		$datatable['data']            = array();
+		$start  = isset($_POST['start']) ? $_POST['start'] : 0;
+		$no = $start + 1;
+		foreach ($dt['data']->result() as $row) {
+			$fields = array($no++);
+			$fields[] = $row->VoucherName;
+			$fields[] = $row->VoucherNumber;
+			$fields[] = $row->VoucherPrice;
+
+			$fields[] = '
+
+			<button class="btn btn-default my-1 btn-blocks  btnEditDetail text-white" 
+			data-voucherid="' . $row->VoucherID . '"
+			data-vouchername="' . $row->VoucherName . '"
+
+			data-voucherqty="' . $row->VoucherQty . '"
+			data-voucherprice="' . $row->VoucherPrice . '"
+			
+			><i class="fas fa-print"></i> Cetak </button>
+
+			
+			';
+
+
+
+			$datatable['data'][] = $fields;
+		}
+		echo json_encode($datatable);
+		exit();
 	}
 }

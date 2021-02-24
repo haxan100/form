@@ -1,11 +1,16 @@
+<?php
+
+$url = $this->uri->segment(3);
+?>
+
 <div class="content">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
-				<button type="button" id="btnTambah" class="btn btn-primary">Tambah</button>
+				<!-- <button type="button" id="btnTambah" class="btn btn-primary">Tambah</button> -->
 				<div class="card">
 					<div class="card-header card-header-primary">
-						<h4 class="card-title ">Master Voucher</h4>
+						<h4 class="card-title ">Master Voucher Detail Content</h4>
 					</div>
 					<div class="card-body">
 						<div class="table-responsive">
@@ -14,10 +19,8 @@
 									<tr>
 										<th>No.</th>
 										<th>Name Voucher</th>
-										<th>Voucher Start Date</th>
-										<th>Voucher End Date</th>
-										<th>Voucher QTY</th>
-										<th>Price</th>
+										<th>Voucher Number</th>
+										<th>Voucher Price</th>
 										<th style="width: 100px;">Aksi</th>
 									</tr>
 								</thead>
@@ -195,9 +198,11 @@
 				[1, "asc"]
 			],
 			'ajax': {
-				url: '<?= base_url('admin/getAllDataVoucher'); ?>',
+				url: '<?= base_url('admin/getAllDataDetailVoucher'); ?>',
 				type: 'POST',
 				"data": function(d) {
+                    
+					d.id = <?= $url ?>;
 					d.tipe = $('#Tipe').children('option:selected').val();
 					return d;
 				},
