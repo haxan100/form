@@ -21,7 +21,7 @@ $url = $this->uri->segment(3);
 										<th>Name Voucher</th>
 										<th>Voucher Number</th>
 										<th>Voucher Price</th>
-										<th style="width: 100px;">Aksi</th>
+										<!-- <th style="width: 100px;">Aksi</th> -->
 									</tr>
 								</thead>
 							</table>
@@ -179,7 +179,7 @@ $url = $this->uri->segment(3);
 
 			"columnDefs": [{
 					"targets": [
-						1, 2, 3, 4,
+						1, 2, 3
 					],
 					"className": "dt-body-center dt-head-center",
 					"width": "20px",

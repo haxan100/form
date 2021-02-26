@@ -583,20 +583,21 @@ class Admin extends CI_Controller {
 			$fields[] = $row->VoucherName;
 			$fields[] = $row->VoucherNumber;
 			$fields[] = $row->VoucherPrice;
+			// $fields[] = $row->VoucherPrice;
 
-			$fields[] = '
+			// $fields[] = '
 
-			<button class="btn btn-default my-1 btn-blocks  btnEditDetail text-white" 
-			data-voucherid="' . $row->VoucherID . '"
-			data-vouchername="' . $row->VoucherName . '"
+			// <button class="btn btn-default my-1 btn-blocks  btnEditDetail text-white" 
+			// data-voucherid="' . $row->VoucherID . '"
+			// data-vouchername="' . $row->VoucherName . '"
 
-			data-vouchernumber="' . $row->VoucherNumber . '"
-			data-voucherprice="' . $row->VoucherPrice . '"
+			// data-vouchernumber="' . $row->VoucherNumber . '"
+			// data-voucherprice="' . $row->VoucherPrice . '"
 			
-			><i class="fas fa-print"></i> Cetak </button>
+			// ><i class="fas fa-print"></i> Cetak </button>
 
 			
-			';
+			// ';
 
 
 
